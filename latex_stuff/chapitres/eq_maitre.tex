@@ -9,16 +9,16 @@ L'évolution temporelle d'un système quantique est décrit par la célèbre éq
 En définissant un opérateur d'évolution $U(t,t_0)$ qui amène un état du temps $t_0$ au temps $t$, c'est-à-dire que $\ket{\psi(t)} = U(t,t_0)\ket{\psi(t_0)}$, on peut l'injecter dans (1) afin d'avoir 
 
 \begin{equation}
-    i \derivative{}{t}U(t,t_0)\ket{\psi(t_0)} = H(t)U(t,t_0)\ket{\psi(t_0)} \implies i \derivative{}{t}U(t,t_0) = H(t)U(t,t_0)
+    i \derivative{}{t}U(t,t_0)\ket{\psi(t_0)} = H(t)U(t,t_0)\ket{\psi(t_0)} \implies i \frac{\partial}{\partial t}U(t,t_0) = H(t)U(t,t_0)
 \end{equation}
 
-Par ailleurs, il va de soi que $U(t,t) = \mathbb{I}$ pour tout temps $t$, car il n'y a alors, selon notre définition, aucune évolution qui a lieu. Dans ce cas, comme rien ne se passe, il faut que l'opérateur d'évolution soit l'identité. Aussi, on peut décomposer une évolution $U(t, t_0)$ en plusieurs évolutions une à la suite de l'autre de manière à avoir $U(t,t_0) = U(t,t_1)U(t_1,t_0)$ par exemple (il pourrait y en avoir autant qu'on veut).
+Ici, la dérivée totale devient partielle par la règle de dérivation en chaîne pour les fonctions multivariables (il n'y a que $\frac{\partial}{\partial t}U(t,t_0)$ qui survit). Par ailleurs, il va de soi que $U(t,t) = \mathbb{I}$ pour tout temps $t$, car il n'y a alors, selon notre définition, aucune évolution qui a lieu. Dans ce cas, comme rien ne se passe, il faut que l'opérateur d'évolution soit l'identité. Aussi, on peut décomposer une évolution $U(t, t_0)$ en plusieurs évolutions une à la suite de l'autre de manière à avoir $U(t,t_0) = U(t,t_1)U(t_1,t_0)$ par exemple (il pourrait y en avoir autant qu'on veut).
 
 \subsection{Système fermé et hamiltonien statique}
 Pour un système fermé et dont l'hamiltonien est statique (donc indépendant du temps), (1.2) devient
 
 \begin{equation}
-    i\derivative{}{t}U(t,t_0) = HU(t,t_0) \implies \int_{U(t_0,t_0)}^{U(t,t_0)}\frac{\diff U^{'}}{U'} = -iH \int_{t_0}^{t}dt^{'} \implies U(t,t_0) = e^{-iH(t-t_0)}
+    i\frac{\partial}{\partial t}U(t,t_0) = HU(t,t_0) \implies \int_{U(t_0,t_0)}^{U(t,t_0)}\frac{\diff U^{'}}{U'} = -iH \int_{t_0}^{t}dt^{'} \implies U(t,t_0) = e^{-iH(t-t_0)}
 \end{equation}
 
 \subsection{Système fermé et hamiltonien dynamique}
@@ -177,14 +177,78 @@ Pour l'instant, on s'est intéressé à l'équation de Schrödinger pour un syst
 
 Les $p_j$ correspondent aux probabilités de chaque état dans la distribution, donc $\sum_{j}^{}p_j = 1$ nécessairement. Par ailleurs, pour être physique, une matrice densité doit aussi être hermitienne ($\rho = \rho^{\dagger}$) et positive semi-définie ($\bra{\psi}\rho\ket{\psi} \geq 0$). Ces conditions assurent que les $p_j$ sont réels et $\geq 0$ (comme ça devrait être le cas pour des probabilités).
 
+En prenant la dérivée par rapport au temps de $\rho(t)$, on trouve 
 
+\begin{equation*}
+    \derivative{}{t}\rho(t) = \derivative{}{t}\left(U(t,t_0)\rho(t_0)U^{\dagger}(t,t_0)\right) = U(t,t_0)\rho(t_0)\left(\derivative{}{t}U^{\dagger}(t,t_0)\right) + \left(\derivative{}{t}U(t,t_0)\rho(t_0)\right)U^{\dagger}(t,t_0)
+\end{equation*}
+\begin{equation*}
+    = U(t,t_0)\rho(t_0)\left(\frac{\partial}{\partial t}U^{\dagger}(t,t_0)\right) + \left(\frac{\partial}{\partial t}U(t,t_0)\rho(t_0)\right)U^{\dagger}(t,t_0)
+\end{equation*}
 
+où, par (1.2), on peut déduire
 
+\begin{equation*}
+    \frac{\partial}{\partial t}U(t,t_0) = -iH(t)U(t,t_0) \implies \frac{\partial}{\partial t}U(t,t_0)\rho(t_0) = -iH(t)U(t,t_0)\rho(t_0)
+\end{equation*}
+\begin{equation*}
+    \frac{\partial}{\partial t}U^{\dagger}(t,t_0) = iU^{\dagger}(t,t_0)H^\dagger(t) 
+\end{equation*}
 
+de sorte que
 
+\begin{equation}
+    \derivative{}{t}\rho(t) = -i\left[H(t), \rho(t)\right]
+\end{equation}
 
+Cette dernière équation porte le nom d'équation de Liouville Von-Neumann.
 
+\subsection{Représentation d'Heisenberg}
+Depuis le début, l'objet mathématique qui effectue l'évolution temporelle est $U(t,t_0)$ et il s'applique sur un vecteur d'état/une matrice densité. En quelque sorte, on peut dire que "l'évolution est contenu" dans l'état/la matrice densité. Certes, les opérateurs peuvent dépendre ou non du temps, mais c'est bien l'état qui évolue. Cette façon d'écrire les choses se nomme la représentation de Schrödinger et est souvent utilisée en mécanique quantique. 
 
+Tout de même, de manière équivalente, on pourrait "mettre l'évolution" sur les opérateurs, résultant en un état/une matrice densité qui ne dépendra plus du temps, ce qu'on nomme la représentation de Heisenberg. Ainsi, il faut réussir à "transférer l'évolution" de l'état vers l'opérateur. Pour y arriver, on remarque que la valeur moyenne d'un opérateur $A(t)$ doit nécessairement être la même peu importe la représentation qu'on choisit.
 
+\begin{equation*}
+    \textlangle A(t)\textrangle = \text{Tr}(A(t)\rho(t)) = \text{Tr}(A_H(t)\rho(t_0)) 
+\end{equation*}
+
+Ici, $A(t)$ est la représentation de Schrödinger de l'opérateur (il ne contient pas l'évolution) tandis que $A_H(t)$ est sa représentation de Heisenberg (d'où le $H$) contenant cette fois l'évolution. Sachant la définition de $\rho(t)$, on développe en utilisant une propriété de la trace :
+
+\begin{equation*}
+    \textlangle A(t)\textrangle = \text{Tr}(A(t)U(t,t_0)\rho(t_0)U^\dagger(t,t_0)) = \text{Tr}(A_H(t)\rho(t_0)) \implies \text{Tr}(U^\dagger(t,t_0)A(t)U(t,t_0)\rho(t_0)) = \text{Tr}(A_H(t)\rho(t_0)) 
+\end{equation*}
+\begin{equation}
+    \implies A_H(t) = U^\dagger(t,t_0)A(t)U(t,t_0)
+\end{equation}
+
+On sait maintenant grâce à (1.14) comment écrire l'évolution dans la représentation de Heisenberg. En dérivant (1.14) de chaque côté, on trouve 
+
+\begin{equation*}
+    \derivative{}{t}A_H(t) = \derivative{}{t}\left(U^\dagger(t,t_0)A(t)U(t,t_0)\right)
+\end{equation*}
+\begin{equation*}
+    = \left(\derivative{}{t}U^\dagger(t,t_0)\right)A(t)U(t,t_0) + U^\dagger(t,t_0)\left(\derivative{}{t}A(t)\right)U(t,t_0) + U^\dagger(t,t_0)A(t)\left(\derivative{}{t}U(t,t_0)\right)
+\end{equation*}
+\begin{equation*}
+    = \left(\frac{\partial}{\partial t}U^\dagger(t,t_0)\right)A(t)U(t,t_0) + U^\dagger(t,t_0)\left(\frac{\partial}{\partial t}A(t)\right)U(t,t_0) + U^\dagger(t,t_0)A(t)\left(\frac{\partial}{\partial t}U(t,t_0)\right)
+\end{equation*}
+\begin{equation*}
+    = iU^\dagger(t,t_0)H(t)A(t)U(t,t_0) + \underbrace{U^\dagger(t,t_0)\left(\frac{\partial}{\partial t}A(t)\right)U(t,t_0)}_\text{$\partial A_H(t)/\partial t$} - iU^\dagger(t,t_0)A(t)H(t)U(t,t_0)
+\end{equation*}
+
+Comme $\frac{\partial}{\partial t}A(t)$ et $H(t)$ sont aussi des opérateurs, (1.14) s'applique et on écrit
+
+\begin{equation*}
+    \derivative{}{t}A_H(t) = iU^\dagger(t,t_0)H(t)\underbrace{U(t,t_0)U^\dagger(t,t_0)}_\text{$\mathbb{I}$}A(t)U(t,t_0) - iU^\dagger(t,t_0)A(t)\underbrace{U(t,t_0)U^\dagger(t,t_0)}_\text{$\mathbb{I}$}H(t)U(t,t_0) + \frac{\partial}{\partial t}A_H(t)
+\end{equation*}
+\begin{equation}
+    = iH_H(t)A_H(t) -iA_H(t)H_H(t) + \frac{\partial}{\partial t}A_H(t) = i\left[H_H(t), A_H(t)\right] + \frac{\partial}{\partial t}A_H(t)
+\end{equation}
+
+où, juste pour clarifier la notation qui peut être mélangeante, 
+
+\begin{equation*}
+    \frac{\partial}{\partial t}A_H(t) = U^\dagger(t,t_0)\left(\frac{\partial}{\partial t}A(t)\right)U(t,t_0) 
+\end{equation*}
 
 
