@@ -268,16 +268,16 @@ où, juste pour clarifier la notation qui peut être mélangeante,
 Il existe une troisième représentation un peu plus générale que celles dont on vient de discuter. En effet, la représentation de Schrödinger et de Heisenberg sont deux cas spéciaux de ce qu'on appelle la représentation d'intéraction. Sans perte de généralité, on peut dire que tout hamiltonien s'écrit comme 
 
 \begin{equation*}
-    H(t) = H_0 + H_{\text{int.}}(t)
+    H(t) = H_0 + \hat{H}_{\text{int.}}(t)
 \end{equation*}
 
-où on sépare simplement la "partie constante" $H_0$ et la "partie dépendante du temps" $H_{\text{int.}}(t)$ de l'hamiltonien $H(t)$. Dès lors, chaque hamiltonien présent, c'est-à-dire $H(t), H_0$ et $H_{\text{int.}}(t)$, aura son propre opérateur d'évolution $U(t,t_0)$, $U_0(t,t_0)$ et $U_{\text{int.}}(t,t_0)$ respectivement. Comme $H_0$ ne dépend pas du temps, il va de soi par (1.3) que 
+où on sépare simplement la "partie constante" $H_0$ et la "partie dépendante du temps" $\hat{H}_{\text{int.}}(t)$ de l'hamiltonien $H(t)$. Dès lors, chaque hamiltonien présent, c'est-à-dire $H(t), H_0$ et $\hat{H}_{\text{int.}}(t)$, aura son propre opérateur d'évolution $U(t,t_0)$, $U_0(t,t_0)$ et $U_{\text{int.}}(t,t_0)$ respectivement. Comme $H_0$ ne dépend pas du temps, il va de soi par (1.3) que 
 
 \begin{equation*}
     U_0(t,t_0) = e^{-iH_0(t-t_0)}
 \end{equation*}
 
-Pour clarifier, $H(t)$ est un hamiltonien qu'on aurait pu croiser avant cette section et donc $U(t,t_0)$ est de la même forme que (1.11). Pour $H_{\text{int.}}(t,t_0)$, on peut tout bonnement dire que 
+Pour clarifier, $H(t)$ est un hamiltonien qu'on aurait pu croiser avant cette section et donc $U(t,t_0)$ est de la même forme que (1.11). Pour $\hat{H}_{\text{int.}}(t,t_0)$, on peut tout bonnement dire que 
 
 \begin{equation*}
     U_{\text{int.}}(t,t_0) = U^\dagger_0(t,t_0)U(t,t_0)
@@ -296,15 +296,26 @@ Comme la valeur moyenne d'un opérateur ne change pas selon sa représentation, 
 \begin{equation*}
     = \text{Tr}(U^\dagger_0(t,t_0)A(t)U_0(t,t_0)U^\dagger_0(t,t_0)U(t,t_0)\rho(t_0)U^\dagger(t,t_0)U_0(t,t_0))
 \end{equation*}
-\begin{equation*}
+\begin{equation}
     = \text{Tr}(U^\dagger_0(t,t_0)A(t)U_0(t,t_0)U_{\text{int.}}(t,t_0)\rho(t_0)U^\dagger_{\text{int.}}(t,t_0)) = \text{Tr}\left(A_\text{int.}(t)\rho_\text{int.}(t)\right)
+\end{equation}
+
+où on pose 
+
+\begin{equation}
+    A_\text{int.}(t) = U^\dagger_0(t,t_0)A(t)U_0(t,t_0) 
+\end{equation}
+\begin{equation}
+    \rho_\text{int.}(t) = U_{\text{int.}}(t,t_0)\rho(t_0)U^\dagger_{\text{int.}}(t,t_0)
+\end{equation}
+
+Ces définitions ne tombent pas de nulle part, car elles permettent d'obtenir la représentation de Schrödinger ou de Heisenberg selon les conditions de chacune des représentations. Effectivement, si $\hat{H}_\text{int.}(t) = 0$, alors $H(t) = H_0 \implies U(t,t_0) = U_0(t,t_0)$ et $U_\text{int.}(t,t_0) = \mathbb{I}$. Dans ce cas, (1.17) devient
+
+\begin{equation*}
+    \textlangle A(t)\textrangle = \text{Tr}(U^\dagger_0(t,t_0)A(t)U_0(t,t_0)\rho(t_0)) = \text{Tr}(U^\dagger(t,t_0)A(t)U(t,t_0)\rho(t_0)) = \text{Tr}(A_H(t)\rho(t_0))   
 \end{equation*}
 
-
-
-
-
-
+ce qui correspond bien à ce qu'on devrait pour la représentation de Heisenberg. D'un autre côté, si $H_0 = 0$, un argument similaire permet de retomber sur la représentation de Schrödinger. Finalement, on peut adapter (1.2) et (1.13) pour prendre en compte la représentation d'intéraction.
 
 
 
