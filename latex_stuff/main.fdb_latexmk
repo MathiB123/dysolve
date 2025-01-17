@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1737064668.46234 "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" "main.pdf" "main" 1737064669.60565 0
+["pdflatex"] 1737130245.94724 "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" "main.pdf" "main" 1737130247.02874 0
   "/etc/texmf/web2c/texmf.cnf" 1736284741.41123 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" 1736523501.23945 2167 7e66d8d56593a5f26be67c705539e616 ""
+  "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" 1737064735.64358 2167 7e66d8d56593a5f26be67c705539e616 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -233,11 +233,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1736523425.67346 165051 331a4b0cc8c79ccd6b2fbd918be026fc ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736523451 6837863 8e982e5ba70809c29420bac6757cc55b ""
-  "chapitres/eq_maitre.tex" 1737064668.15158 17018 0886f36735eafc06067d88a83bce11d7 ""
-  "main.aux" 1737064669.45158 1439 e0de586e7ed78a6735b96c365c9e7fbd "pdflatex"
-  "main.out" 1737064669.45258 1764 a1ddb74915788cdaee76149587db34aa "pdflatex"
-  "main.tex" 1736523501.23945 2167 7e66d8d56593a5f26be67c705539e616 ""
-  "main.toc" 1737064669.45258 819 d76420adf6d64a73f026374f9cb1f77a "pdflatex"
+  "chapitres/eq_maitre.tex" 1737130245.62205 20477 cdadd41601c92513d65db25ee49418a1 ""
+  "main.aux" 1737130246.87705 1576 ba589ddf488458a49779de5f426c2d74 "pdflatex"
+  "main.out" 1737130246.87805 1970 97849769e77c97249c35826d8932b60d "pdflatex"
+  "main.tex" 1737064735.64358 2167 7e66d8d56593a5f26be67c705539e616 ""
+  "main.toc" 1737130246.87805 915 116851769edd85ca367840bc236d13df "pdflatex"
   (generated)
   "main.aux"
   "main.log"

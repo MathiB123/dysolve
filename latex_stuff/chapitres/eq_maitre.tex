@@ -204,15 +204,15 @@ de sorte que
 Cette dernière équation porte le nom d'équation de Liouville Von-Neumann.
 
 \subsection{Représentation d'Heisenberg}
-Depuis le début, l'objet mathématique qui effectue l'évolution temporelle est $U(t,t_0)$ et il s'applique sur un vecteur d'état/une matrice densité. En quelque sorte, on peut dire que "l'évolution est contenu" dans l'état/la matrice densité. Certes, les opérateurs peuvent dépendre ou non du temps, mais c'est bien l'état qui évolue. Cette façon d'écrire les choses se nomme la représentation de Schrödinger et est souvent utilisée en mécanique quantique. 
+Depuis le début, l'objet mathématique qui effectue l'évolution temporelle est $U(t,t_0)$ et il s'applique sur un vecteur d'état/une matrice densité. En quelque sorte, on peut dire que "l'évolution est contenue" dans l'état/la matrice densité. Certes, les opérateurs peuvent dépendre ou non du temps, mais c'est bien l'état qui évolue. Cette façon d'écrire les choses se nomme la représentation de Schrödinger. 
 
-Tout de même, de manière équivalente, on pourrait "mettre l'évolution" sur les opérateurs, résultant en un état/une matrice densité qui ne dépendra plus du temps, ce qu'on nomme la représentation de Heisenberg. Ainsi, il faut réussir à "transférer l'évolution" de l'état vers l'opérateur. Pour y arriver, on remarque que la valeur moyenne d'un opérateur $A(t)$ doit nécessairement être la même peu importe la représentation qu'on choisit.
+Tout de même, de manière équivalente, on pourrait "mettre l'évolution" dans les opérateurs, résultant en un état/une matrice densité qui ne dépendra plus du temps. C'est ce qu'on appelle la représentation de Heisenberg. Ainsi, il faut réussir à "transférer l'évolution" de l'état vers l'opérateur. Pour y arriver, on remarque que la valeur moyenne d'un opérateur $A(t)$ doit nécessairement être la même peu importe la représentation qu'on choisit.
 
 \begin{equation*}
     \textlangle A(t)\textrangle = \text{Tr}(A(t)\rho(t)) = \text{Tr}(A_H(t)\rho(t_0)) 
 \end{equation*}
 
-Ici, $A(t)$ est la représentation de Schrödinger de l'opérateur (il ne contient pas l'évolution) tandis que $A_H(t)$ est sa représentation de Heisenberg (d'où le $H$) contenant cette fois l'évolution. Sachant la définition de $\rho(t)$, on développe en utilisant une propriété de la trace :
+Ici, $A(t)$ est la représentation de Schrödinger de l'opérateur (il ne contient pas l'évolution bien) tandis que $A_H(t)$ est sa représentation de Heisenberg (d'où le $H$ en dessous) contenant cette fois l'évolution. Sachant la définition de $\rho(t)$, on développe en utilisant une propriété de la trace :
 
 \begin{equation*}
     \textlangle A(t)\textrangle = \text{Tr}(A(t)U(t,t_0)\rho(t_0)U^\dagger(t,t_0)) = \text{Tr}(A_H(t)\rho(t_0)) \implies \text{Tr}(U^\dagger(t,t_0)A(t)U(t,t_0)\rho(t_0)) = \text{Tr}(A_H(t)\rho(t_0)) 
@@ -250,5 +250,63 @@ où, juste pour clarifier la notation qui peut être mélangeante,
 \begin{equation*}
     \frac{\partial}{\partial t}A_H(t) = U^\dagger(t,t_0)\left(\frac{\partial}{\partial t}A(t)\right)U(t,t_0) 
 \end{equation*}
+
+À partir de (1.15), il est possible de calculer plusieurs cas limites ($H \text{ et/ou } A$ indé. temps, $A=H$, etc...). Avec ces équations, il est possible d'obtenir le fameux théorème d'Ehrenfest qui fait le lien entre la dérivée par rapport au temps de la valeur moyenne de $A$ dans chacune des représentations.
+
+\begin{equation*}
+    \derivative{}{t}\textlangle A(t)\textrangle = \derivative{}{t}\text{Tr}(A_H(t)\rho(t_0)) = \text{Tr}\left(\derivative{}{t}\left(A_H(t)\rho(t_0)\right)\right) = \text{Tr}\left(\left(\derivative{}{t}A_H(t)\right)\rho(t_0)\right) 
+\end{equation*}
+\begin{equation*}
+    = \text{Tr}\left(\left(i\left[H_H(t), A_H(t)\right] + \frac{\partial}{\partial t}A_H(t)\right)\rho(t_0)\right) = \text{Tr}\left(i\left[H_H(t), A_H(t)\right]\rho(t_0) + \frac{\partial}{\partial t}A_H(t)\rho(t_0)\right) 
+\end{equation*}
+\begin{equation}
+    = \text{Tr}\left(i\left[H_H(t), A_H(t)\right]\rho(t_0)\right) + \text{Tr}\left(\frac{\partial}{\partial t}A_H(t)\rho(t_0)\right) = \textlangle i\left[H_H(t), A_H(t)\right]\textrangle + \textlangle \frac{\partial}{\partial t}A_H(t)\textrangle
+\end{equation}
+
+
+\subsection{Représentation d'intéraction}
+Il existe une troisième représentation un peu plus générale que celles dont on vient de discuter. En effet, la représentation de Schrödinger et de Heisenberg sont deux cas spéciaux de ce qu'on appelle la représentation d'intéraction. Sans perte de généralité, on peut dire que tout hamiltonien s'écrit comme 
+
+\begin{equation*}
+    H(t) = H_0 + H_{\text{int.}}(t)
+\end{equation*}
+
+où on sépare simplement la "partie constante" $H_0$ et la "partie dépendante du temps" $H_{\text{int.}}(t)$ de l'hamiltonien $H(t)$. Dès lors, chaque hamiltonien présent, c'est-à-dire $H(t), H_0$ et $H_{\text{int.}}(t)$, aura son propre opérateur d'évolution $U(t,t_0)$, $U_0(t,t_0)$ et $U_{\text{int.}}(t,t_0)$ respectivement. Comme $H_0$ ne dépend pas du temps, il va de soi par (1.3) que 
+
+\begin{equation*}
+    U_0(t,t_0) = e^{-iH_0(t-t_0)}
+\end{equation*}
+
+Pour clarifier, $H(t)$ est un hamiltonien qu'on aurait pu croiser avant cette section et donc $U(t,t_0)$ est de la même forme que (1.11). Pour $H_{\text{int.}}(t,t_0)$, on peut tout bonnement dire que 
+
+\begin{equation*}
+    U_{\text{int.}}(t,t_0) = U^\dagger_0(t,t_0)U(t,t_0)
+\end{equation*}
+
+En effet, $U$ effectue l'évolution totale comprenant la partie constante et dépendante du temps. Si on évolue dans l'autre sens $U_0$ (d'où le $\dagger$), alors on annule seulement l'évolution de la partie constante. Ainsi, au final, la partie dépendante du temps est la seule à avoir évolué.
+
+Comme la valeur moyenne d'un opérateur ne change pas selon sa représentation, on trouve depuis la représentation de Schrödinger :
+
+\begin{equation*}
+    \textlangle A(t)\textrangle = \text{Tr}(A(t)\rho(t)) = \text{Tr}(A(t)U(t,t_0)\rho(t_0)U^\dagger(t,t_0))
+\end{equation*}
+\begin{equation*}
+    = \text{Tr}(\underbrace{U_0(t,t_0)U^\dagger_0(t,t_0)}_\text{$\mathbb{I}$}A(t)\underbrace{U_0(t,t_0)U^\dagger_0(t,t_0)}_\text{$\mathbb{I}$}U(t,t_0)\rho(t_0)U^\dagger(t,t_0))
+\end{equation*}
+\begin{equation*}
+    = \text{Tr}(U^\dagger_0(t,t_0)A(t)U_0(t,t_0)U^\dagger_0(t,t_0)U(t,t_0)\rho(t_0)U^\dagger(t,t_0)U_0(t,t_0))
+\end{equation*}
+\begin{equation*}
+    = \text{Tr}(U^\dagger_0(t,t_0)A(t)U_0(t,t_0)U_{\text{int.}}(t,t_0)\rho(t_0)U^\dagger_{\text{int.}}(t,t_0)) = \text{Tr}\left(A_\text{int.}(t)\rho_\text{int.}(t)\right)
+\end{equation*}
+
+
+
+
+
+
+
+
+
 
 
