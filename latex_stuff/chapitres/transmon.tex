@@ -1,0 +1,27 @@
+\section{Qubits}
+\subsection{Circuit LC quantique}
+Un circuit LC est composé d'un condensateur et d'une bobine dont l'énergie est décrit par l'hamiltonien
+
+\begin{equation}
+    H_{LC} = \frac{Q^2}{2C} + \frac{\Phi^2}{2L} 
+\end{equation}
+
+où $Q$ est la charge aux bornes du condensateur, $C$ est la capacité du condensateur (la quantité de charge que peut stocker le condensateur), $\Phi$ est le flux magnétique induit par la bobine et $L$ est l'inductance de la bobine (...). À la forme de (2.1), cela ressemble beaucoup à l'hamiltonien d'un oscillateur harmonique quantique de masse $C$ et de constante de rappel $\frac{1}{L}$. Effectivement, en posant
+
+\begin{equation*}
+    Q = -i\left(\frac{\hbar^2C}{4L}\right)^{1/4}(a - a^\dagger)
+\end{equation*}
+\begin{equation*}
+    \Phi = \left(\frac{\hbar^2L}{4C}\right)(a+a^\dagger)
+\end{equation*}
+
+à l'aide de l'opérateur d'annihilation $a$ et de création $a^\dagger$, on retrouve bien l'hamiltonien de l'oscillateur harmonique quantique. 
+
+\begin{equation*}
+    H_{LC} = -\frac{1}{2C}\left(\frac{\hbar^2C}{4L}\right)^{1/2}(a - a^\dagger)^2 
+\end{equation*}
+
+
+
+On ajoute le fait que $\left[Q, \Phi\right] = i\hbar \mathbb{I}$.
+

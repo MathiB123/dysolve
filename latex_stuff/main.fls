@@ -421,6 +421,10 @@ INPUT ./chapitres/eq_maitre.tex
 INPUT ./chapitres/eq_maitre.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
+INPUT ./chapitres/transmon.tex
+INPUT ./chapitres/transmon.tex
+INPUT ./chapitres/transmon.tex
+INPUT ./chapitres/transmon.tex
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
