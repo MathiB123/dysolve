@@ -147,11 +147,11 @@ En général, pour $J_n$, il existera $n!$ façons différentes de l'écrire (po
 
 qu'on ajoute dans (1.5) donnant ainsi
 
-\begin{equation}
+\begin{equation*}
     U(t,t_0) = \sum_{n=0}^{\infty}\frac{(-i)^n}{n!}\int_{t_0}^{t}dt_1\int_{t_0}^{t}dt_2...\int_{t_0}^{t}dt_n T \left[H(t_1)H(t_2)...H(t_n)\right]
-\end{equation}
+\end{equation*}
 
-De (1.10), si les hamiltoniens commutent (donc que $T$ ne fait rien), on voit qu'on peut retomber sur (1.4).
+De là, si les hamiltoniens commutent (donc que $T$ ne fait rien), on voit qu'on peut retomber sur (1.4).
 
 \begin{equation*}
     U(t,t_0) = \sum_{n=0}^{\infty}\frac{(-i)^n}{n!}\int_{t_0}^{t}dt_1\int_{t_0}^{t}dt_2...\int_{t_0}^{t}dt_n H(t_1)H(t_2)...H(t_n) = \sum_{n=0}^{\infty}\frac{(-i)^n}{n!}\left(\int_{t_0}^{t}H(t^{'})dt^{'}\right)^n
@@ -221,7 +221,7 @@ Ici, $A(t)$ est la représentation de Schrödinger de l'opérateur (il ne contie
     \implies A_H(t) = U^\dagger(t,t_0)A(t)U(t,t_0)
 \end{equation}
 
-On sait maintenant grâce à (1.14) comment écrire l'évolution dans la représentation de Heisenberg. En dérivant (1.14) de chaque côté, on trouve 
+On sait maintenant grâce à (1.13) comment écrire l'évolution dans la représentation de Heisenberg. En dérivant (1.13) de chaque côté, on trouve 
 
 \begin{equation*}
     \derivative{}{t}A_H(t) = \derivative{}{t}\left(U^\dagger(t,t_0)A(t)U(t,t_0)\right)
@@ -236,7 +236,7 @@ On sait maintenant grâce à (1.14) comment écrire l'évolution dans la représ
     = iU^\dagger(t,t_0)H(t)A(t)U(t,t_0) + \underbrace{U^\dagger(t,t_0)\left(\frac{\partial}{\partial t}A(t)\right)U(t,t_0)}_\text{$\partial A_H(t)/\partial t$} - iU^\dagger(t,t_0)A(t)H(t)U(t,t_0)
 \end{equation*}
 
-Comme $\frac{\partial}{\partial t}A(t)$ et $H(t)$ sont aussi des opérateurs, (1.14) s'applique et on écrit
+Comme $\frac{\partial}{\partial t}A(t)$ et $H(t)$ sont aussi des opérateurs, (1.13) s'applique et on écrit
 
 \begin{equation*}
     \derivative{}{t}A_H(t) = iU^\dagger(t,t_0)H(t)\underbrace{U(t,t_0)U^\dagger(t,t_0)}_\text{$\mathbb{I}$}A(t)U(t,t_0) - iU^\dagger(t,t_0)A(t)\underbrace{U(t,t_0)U^\dagger(t,t_0)}_\text{$\mathbb{I}$}H(t)U(t,t_0) + \frac{\partial}{\partial t}A_H(t)
@@ -251,7 +251,7 @@ où, juste pour clarifier la notation qui peut être mélangeante,
     \frac{\partial}{\partial t}A_H(t) = U^\dagger(t,t_0)\left(\frac{\partial}{\partial t}A(t)\right)U(t,t_0) 
 \end{equation*}
 
-À partir de (1.15), il est possible de calculer plusieurs cas limites ($H \text{ et/ou } A$ indé. temps, $A=H$, etc...). Avec ces équations, il est possible d'obtenir le fameux théorème d'Ehrenfest qui fait le lien entre la dérivée par rapport au temps de la valeur moyenne de $A$ dans chacune des représentations.
+À partir de (1.14), il est possible de calculer plusieurs cas limites ($H \text{ et/ou } A$ indé. temps, $A=H$, etc...). Avec ces équations, il est possible d'obtenir le fameux théorème d'Ehrenfest qui fait le lien entre la dérivée par rapport au temps de la valeur moyenne de $A$ dans chacune des représentations.
 
 \begin{equation*}
     \derivative{}{t}\textlangle A(t)\textrangle = \derivative{}{t}\text{Tr}(A_H(t)\rho(t_0)) = \text{Tr}\left(\derivative{}{t}\left(A_H(t)\rho(t_0)\right)\right) = \text{Tr}\left(\left(\derivative{}{t}A_H(t)\right)\rho(t_0)\right) 
@@ -277,7 +277,7 @@ où on sépare simplement la "partie constante" $H_0$ et la "partie dépendante 
     U_0(t,t_0) = e^{-iH_0(t-t_0)}
 \end{equation*}
 
-Pour clarifier, $H(t)$ est un hamiltonien qu'on aurait pu croiser avant cette section et donc $U(t,t_0)$ est de la même forme que (1.11). Pour $\hat{H}_{\text{int.}}(t,t_0)$, on peut tout bonnement dire que 
+Pour clarifier, $H(t)$ est un hamiltonien qu'on aurait pu croiser avant cette section et donc $U(t,t_0)$ est de la même forme que (1.10). Pour $\hat{H}_{\text{int.}}(t,t_0)$, on peut tout bonnement dire que 
 
 \begin{equation*}
     U_{\text{int.}}(t,t_0) = U^\dagger_0(t,t_0)U(t,t_0)
@@ -309,13 +309,13 @@ où on pose
     \rho_\text{int.}(t) = U_{\text{int.}}(t,t_0)\rho(t_0)U^\dagger_{\text{int.}}(t,t_0)
 \end{equation}
 
-Ces définitions ne tombent pas de nulle part, car elles permettent d'obtenir la représentation de Schrödinger ou de Heisenberg selon les conditions de chacune des représentations. Effectivement, si $\hat{H}_\text{int.}(t) = 0$, alors $H(t) = H_0 \implies U(t,t_0) = U_0(t,t_0)$ et $U_\text{int.}(t,t_0) = \mathbb{I}$. Dans ce cas, (1.17) devient
+Ces définitions ne tombent pas de nulle part, car elles permettent d'obtenir la représentation de Schrödinger ou de Heisenberg selon les conditions de chacune des représentations. Effectivement, si $\hat{H}_\text{int.}(t) = 0$, alors $H(t) = H_0 \implies U(t,t_0) = U_0(t,t_0)$ et $U_\text{int.}(t,t_0) = \mathbb{I}$. Dans ce cas, (1.16) devient
 
 \begin{equation*}
     \textlangle A(t)\textrangle = \text{Tr}(U^\dagger_0(t,t_0)A(t)U_0(t,t_0)\rho(t_0)) = \text{Tr}(U^\dagger(t,t_0)A(t)U(t,t_0)\rho(t_0)) = \text{Tr}(A_H(t)\rho(t_0))   
 \end{equation*}
 
-ce qui correspond bien à ce qu'on devrait pour la représentation de Heisenberg. D'un autre côté, si $H_0 = 0$, un argument similaire permet de retomber sur la représentation de Schrödinger. Finalement, on peut adapter (1.2) et (1.13) pour prendre en compte la représentation d'intéraction.
+ce qui correspond bien à ce qu'on devrait pour la représentation de Heisenberg. D'un autre côté, si $H_0 = 0$, un argument similaire permet de retomber sur la représentation de Schrödinger. Finalement, on peut adapter (1.2) et (1.12) pour prendre en compte la représentation d'intéraction.
 
 
 
