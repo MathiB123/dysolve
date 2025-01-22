@@ -1,9 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1737486485.87779 "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" "main.pdf" "main" 1737486487.1089 0
+["pdflatex"] 1737553307.7612 "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" "main.pdf" "main" 1737553308.93437 0
   "/etc/texmf/web2c/texmf.cnf" 1736284741.41123 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" 1737476611.83609 2204 07a12630b96d66911f45854ca9861284 ""
+  "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" 1737486918.00596 2245 14a23adf0321af318d19a0f31fad84e5 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -40,7 +39,6 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb" 1248133631 30457 bc0868ebece724ed7c3d37e3d9bff7bd ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
-  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1248133631 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf" 1703367853 67406 dceb79d013836a96b38471bc632b9fc3 ""
@@ -233,11 +231,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1736523425.67346 165051 331a4b0cc8c79ccd6b2fbd918be026fc ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736523451 6837863 8e982e5ba70809c29420bac6757cc55b ""
-  "chapitres/eq_maitre.tex" 1737486485.55993 21571 47820ddee3625ee337c4fabf5d91d3eb ""
-  "main.aux" 1737486486.94993 1576 ba589ddf488458a49779de5f426c2d74 "pdflatex"
-  "main.out" 1737486486.95093 1970 97849769e77c97249c35826d8932b60d "pdflatex"
-  "main.tex" 1737476611.83609 2204 07a12630b96d66911f45854ca9861284 ""
-  "main.toc" 1737486486.95093 915 116851769edd85ca367840bc236d13df "pdflatex"
+  "chapitres/eq_maitre.tex" 1737553307.47434 22032 6b21a222f9b2fa9977c05788123e76c4 ""
+  "chapitres/oscillations.tex" 1737486908.89996 46 603924e93356270621e645221a377537 ""
+  "main.aux" 1737553308.77034 1450 6bfd474e1306b1af661eac0685d22124 "pdflatex"
+  "main.out" 1737553308.77134 1816 d31b05b59f755ebb51a5550154d5bb5f "pdflatex"
+  "main.tex" 1737486918.00596 2245 14a23adf0321af318d19a0f31fad84e5 ""
+  "main.toc" 1737553308.77134 830 6a50d196c4c2101ed6381225c4ffca18 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
