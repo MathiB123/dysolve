@@ -1,3 +1,46 @@
-\section{Problème d'oscillations forcées}
+\section{Oscillatory drive problem}
+\subsection{Cas simple}
+On considère un hamiltonien dépendant du temps de la forme 
+
+\begin{equation}
+    H(t) = H_0 + V(t)
+\end{equation}
+
+où $H_0 = \sum_{k} \lambda_k \ket{k}\bra{k}$ dans sa base d'états propres et $V(t) = X\cos(\omega t)$ pour un certain opérateur $X$. En décomposant le cosinus en exponentielles complexes, 
+
+\begin{equation*}
+    H(t) = H_0 + X\left(\frac{e^{i \omega t} + e^{-i\omega t}}{2}\right)
+\end{equation*}
+
+Pour une variation infime de temps et en utilisant la définition de (2.1), on trouve (et ce n'est pas très beau)
+
+\begin{equation*}
+    U(t+\delta t, t) = \sum_{n=0}^{\infty} (-i)^n \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2}H(t_n)...H(t_1)dt_1 ... dt_n
+\end{equation*}
+\begin{equation*}
+    = \sum_{n=0}^{\infty} (-i)^n \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2}\left(H_0 + 
+    V(t_n)\right)...\left(H_0 + V(t_1)\right)dt_1 ... dt_n
+\end{equation*}
+\begin{equation*}
+    = \sum_{n=0}^{\infty} (-i)^n \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2} \left(H_0...H_0 + H_0...H_0V(t_1) + V(t_n)H_0...H_0 + V(t_n)...V(t_1)\right)dt_1 ... dt_n
+\end{equation*}
+\begin{equation}
+    = \sum_{n=0}^{\infty}(-i)^n \left(\int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2}H_0...H_0dt_1 ... dt_n + ... + \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2}V(t_n)...V(t_1)dt_1 ... dt_n \right)
+\end{equation}
+
+Comme on peut le voir, cela devient une horreur très rapidement. Tout de même, dans (2.2), on peut voir la distribution des termes comme si on assignait à chaque case d'une liste de $n$ opérateurs soit $H_0$ ou $V(t)$. Il y a donc au total $2^n$ combinaisons, c'est-à-dire $2^n$ termes chacun de $n$ opérateurs dans la grosse parenthèse de (2.2). 
+
+
+
+
+De manière générale, on les peut écrire 
+
+\begin{equation*}
+    d
+\end{equation*}
+
+
+
+Pour chaque terme contenant un $V(t_j)$, par sa définition on peut sortir un facteur $\frac{1}{2}$ en dehors de l'intégrale.
 
 
