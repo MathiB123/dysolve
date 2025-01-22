@@ -22,25 +22,39 @@ Pour une variation infime de temps et en utilisant la définition de (2.1), on t
     V(t_n)\right)...\left(H_0 + V(t_1)\right)dt_1 ... dt_n
 \end{equation*}
 \begin{equation*}
-    = \sum_{n=0}^{\infty} (-i)^n \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2} \left(H_0...H_0 + H_0...H_0V(t_1) + V(t_n)H_0...H_0 + V(t_n)...V(t_1)\right)dt_1 ... dt_n
+    = \sum_{n=0}^{\infty} (-i)^n \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2} \left(H_0...H_0 + H_0...H_0V(t_1) + ... + V(t_n)H_0...H_0 + ... + V(t_n)...V(t_1)\right)dt_1 ... dt_n
 \end{equation*}
 \begin{equation}
-    = \sum_{n=0}^{\infty}(-i)^n \left(\int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2}H_0...H_0dt_1 ... dt_n + ... + \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2}V(t_n)...V(t_1)dt_1 ... dt_n \right)
+    = \sum_{n=0}^{\infty} (-i)^n \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2} H_0...H_0 dt_1...dt_n + ... + \sum_{n=0}^{\infty} (-i)^n \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2} V(t_n)...V(t_1) dt_1...dt_n
 \end{equation}
 
-Comme on peut le voir, cela devient une horreur très rapidement. Tout de même, dans (2.2), on peut voir la distribution des termes comme si on assignait à chaque case d'une liste de $n$ opérateurs soit $H_0$ ou $V(t)$. Il y a donc au total $2^n$ combinaisons, c'est-à-dire $2^n$ termes chacun de $n$ opérateurs dans la grosse parenthèse de (2.2). 
+On peut voir que la distribution des termes correspond à l'ensemble des combinaisons de $n$ opérateurs où on choisit soit $H_0$ ou $V(t)$ pour chacun d'eux. Il y a donc au total dans la longue parenthèse $2^n$ termes chacun $n$ opérateurs. Certains d'entre eux ont un seul $V(t)$ placé à différents endroits dans la chaîne de $n$ opérateurs, d'autres en ont 2, etc... 
 
-
-
-
-De manière générale, on les peut écrire 
+Les $V(t)$, selon leur positionnement, viennent briser des suites de $H_0...H_0$ en plusieurs petites chaînes. Par exemple, un des termes dans (2.2) est 
 
 \begin{equation*}
-    d
+    H_0...H_0V(t_1) = (H_0)^{n-1}V(t_1)    
+\end{equation*}
+
+et on voit alors qu'il y a une chaîne de $n-1$ opérateurs $H_0$ à gauche de $V(t_1)$. Sinon, un des termes présents
+
+\begin{equation*}
+    H_0...H_0V(t_4)H_0H_0V(t_1) = (H_0)^{n-4}V(t_4)(H_0)^2V(t_1)    
+\end{equation*}
+
+nous dit qu'il y a d'abord $V(t_1)$, puis deux $H_0$, ensuite $V(t_4)$ et finalement $n-4$ opérateurs $H_0$. De plus, par définition, on peut remplacer les $V(t)$ par $X\left(\frac{e^{i \omega t} + e^{-i\omega t}}{2}\right)$. Ainsi,
+
+\begin{equation*}
+    (H_0)^{n-1}V(t_1) = (H_0)^{n-1}X\left(\frac{e^{i \omega t_1} + e^{-i\omega t_1}}{2}\right) = \frac{1}{2}\left(e^{i \omega t_1} + e^{-i\omega t_1}\right)(H_0)^{n-1}X
+\end{equation*}
+\begin{equation*}
+    (H_0)^{n-4}V(t_4)(H_0)^2V(t_1) = \frac{1}{2^2}\left(e^{i \omega t_1} + e^{-i\omega t_1}\right)\left(e^{i \omega t_4} + e^{-i\omega t_4}\right)(H_0)^{n-4}X(H_0)^2X
 \end{equation*}
 
 
 
-Pour chaque terme contenant un $V(t_j)$, par sa définition on peut sortir un facteur $\frac{1}{2}$ en dehors de l'intégrale.
+
+
+
 
 
