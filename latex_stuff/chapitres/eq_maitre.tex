@@ -168,8 +168,32 @@ Dans les ouvrages, on utilise plutôt l'écriture
 \end{equation}
 
 \subsubsection{Écriture alternative}
-Il peut être parfois plus logique d'écrire (1.5) selon l'ordre d'application des hamiltoniens (ce que certains auteurs préfèrent)...
+Il peut être parfois plus logique d'écrire (1.5) selon l'ordre d'application des hamiltoniens sur un état (ce que certains auteurs préfèrent). On veut dire par là qu'on aimerait avoir l'indice $t_1$ pour l'hamiltonien le plus à droite, $t_2$ pour celui à sa gauche et $t_n$ pour l'hamiltonien le plus à gauche. Autrement dit, on veut inverser l'écriture de (1.5). On part depuis 
 
+\begin{equation*}
+    U(t,t_0) = \mathbb{I} -i\int_{t_0}^{t}H(t_1)U(t_1,t_0)dt_1
+\end{equation*}
+
+Auparavant, en remplaçant l'équation dans elle-même, on a 
+
+\begin{equation*}
+    U(t,t_0) = \mathbb{I} -i\int_{t_0}^{t}H(t_1)dt_1 - \int_{t_0}^{t}\int_{t_0}^{t_1}H(t_1)H(t_2)U(t_2,t_0)dt_2dt_1
+\end{equation*}
+
+Pour respecter la nouvelle notation, on a ici seulement besoin de renommer les variables du terme tout à droite.
+
+\begin{equation*}
+    U(t,t_0) = \mathbb{I} -i\int_{t_0}^{t}H(t_1)dt_1 - \int_{t_0}^{t}\int_{t_0}^{t_2}H(t_2)H(t_1)U(t_1,t_0)dt_1dt_2
+\end{equation*}
+
+En continuant le processus et en renommant les variables comme il faut, on obtient une forme générale pour cette notation alternative.
+
+\begin{equation}
+    U(t,t_0) = \sum_{n=0}^{\infty} (-i)^n \int_{t_0}^{t}\int_{t_0}^{t_n}...\int_{t_0}^{t_2}H(t_n)...H(t_1)dt_1 ... dt_{n-1} dt_n
+\end{equation}
+
+
+%ATTENTION AUX NUMÉROS D'ÉQ. FAIRE EN SORTE QUE ÇA SE SUIT.
 
 % \subsection{Système ouvert}
 % Pour l'instant, on s'est intéressé à l'équation de Schrödinger pour un système fermé, c'est-à-dire un système isolé de l'environnement. Cependant, un système quantique peut aussi intéragir avec son environnement et on qualifie le système comme étant ouvert. Dans ce cas, à la place d'un vecteur d'état (un ket), on a un ensemble statistique quantique (une distribution statistique d'états quantiques) qu'on représente par l'entremise d'une matrice densité $\rho(t)$.

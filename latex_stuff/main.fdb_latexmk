@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1737553307.7612 "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" "main.pdf" "main" 1737553308.93437 0
+["pdflatex"] 1737554489.54493 "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" "main.pdf" "main" 1737554490.70751 0
   "/etc/texmf/web2c/texmf.cnf" 1736284741.41123 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" 1737486918.00596 2245 14a23adf0321af318d19a0f31fad84e5 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -231,12 +231,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1736523425.67346 165051 331a4b0cc8c79ccd6b2fbd918be026fc ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736523451 6837863 8e982e5ba70809c29420bac6757cc55b ""
-  "chapitres/eq_maitre.tex" 1737553307.47434 22032 6b21a222f9b2fa9977c05788123e76c4 ""
+  "chapitres/eq_maitre.tex" 1737554489.23231 23227 b5c3b261592bb0be4158792796eca7fe ""
   "chapitres/oscillations.tex" 1737486908.89996 46 603924e93356270621e645221a377537 ""
-  "main.aux" 1737553308.77034 1450 6bfd474e1306b1af661eac0685d22124 "pdflatex"
-  "main.out" 1737553308.77134 1816 d31b05b59f755ebb51a5550154d5bb5f "pdflatex"
+  "main.aux" 1737554490.53931 1450 6bfd474e1306b1af661eac0685d22124 "pdflatex"
+  "main.out" 1737554490.54031 1816 d31b05b59f755ebb51a5550154d5bb5f "pdflatex"
   "main.tex" 1737486918.00596 2245 14a23adf0321af318d19a0f31fad84e5 ""
-  "main.toc" 1737553308.77134 830 6a50d196c4c2101ed6381225c4ffca18 "pdflatex"
+  "main.toc" 1737554490.54131 830 6a50d196c4c2101ed6381225c4ffca18 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
