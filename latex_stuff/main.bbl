@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+
+\bibitem{BRE02}
+H.~P. Breuer and F.~Petruccione.
+\newblock {\em The theory of open quantum systems}.
+\newblock Oxford University Press, Great Clarendon Street, 2002.
+
+\bibitem{mythesis}
+Ross Shillito.
+\newblock {\em Simulation and optimization of superconducting qubit control and readout}.
+\newblock Phd thesis, Université de Sherbrooke, Sherbrooke, Québec, Canada, September 2023.
+\newblock Available at \url{https://savoirs.usherbrooke.ca/handle/11143/20742}.
+
+\bibitem{Shillito_2021}
+Ross Shillito, Jonathan~A. Gross, Agustin Di~Paolo, Élie Genois, and Alexandre Blais.
+\newblock Fast and differentiable simulation of driven quantum systems.
+\newblock {\em Physical Review Research}, 3(3), September 2021.
+
+\end{thebibliography}

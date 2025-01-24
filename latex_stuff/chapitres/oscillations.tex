@@ -1,8 +1,8 @@
 \section{Application à un drive oscillant}
-Un drive est une onde (un pulse) qu'on envoie sur un transmon (qubit) afin de manipuler son état. Ici, le drive oscille et cela occasionne des changements de niveaux d'énergie. Le qubit évolue donc avec un hamiltonien dépendant du temps.
+\cite{mythesis} \cite{Shillito_2021} Un drive est une onde (un pulse) qu'on envoie sur un transmon (qubit) afin de manipuler son état. Ici, le drive oscille et cela occasionne des changements de niveaux d'énergie. Le qubit évolue donc avec un hamiltonien dépendant du temps.
 
 \subsection{Dérivation}
-On s'intéresse à (1.11) dans ce contexte.
+
 \subsubsection{Préliminaires}
 On considère un hamiltonien dépendant du temps de la forme 
 
@@ -32,7 +32,13 @@ Pour une variation infime de temps et en utilisant la définition de (2.1), on t
     = \sum_{n=0}^{\infty} \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2} (-i)^n H_0...H_0 dt_1...dt_n + ... + \sum_{n=0}^{\infty} \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2}(-i)^n V(t_n)...V(t_1) dt_1...dt_n
 \end{equation}
 
-On peut voir que la distribution des termes correspond à l'ensemble des combinaisons de $n$ opérateurs où on choisit soit $H_0$ ou $V(t)$ pour chacun d'eux. Il y a donc au total $2^n$ termes chacun $n$ opérateurs pouvant alterner entre des suites de $H_0$ ou de $V(t)$ de différentes longueurs. On s'apprête maintenant à réécrire (2.2) différement et la dérivation pour y arriver peut facilement porter à confusion. Il est recommandé d'essayer de faire soi-même la dérivation en lisant ce qui suit pour aider à la compréhension. 
+On peut voir que la distribution des termes correspond à l'ensemble des combinaisons de $n$ opérateurs où on choisit soit $H_0$ ou $V(t)$ pour chacun d'eux. Il y a donc au total $2^n$ termes chacun $n$ opérateurs pouvant alterner entre des suites de $H_0$ ou de $V(t)$ de différentes longueurs. Graphiquement, on peut représenter cela par la figure 2. On s'apprête maintenant à réécrire (2.2) différement et la dérivation pour y arriver peut facilement porter à confusion. On essaie d'expliquer le plus possible chaque étape.
+
+\begin{figure}[H]
+    \centering
+     \includegraphics[width=0.45\textwidth]{images/ch2/embranchements.png}
+    \caption{Arbre permettant de générer l'ensemble des combinaisons}
+\end{figure}
 
 \subsubsection{Dérivation (partie 1)}
 On considère maintenant $n$ comme étant le nombre de $V(t)$ présents dans chaque terme de (2.2) et on omet temporairement les indices $V(t_j)$ pour éviter de se mélanger avec l'ancienne écriture. Il ne s'agit plus du même $n$ de (2.2) et il faut alors un nouveau moyen d'écrire tout cela avec ce changement de variables. Pour se faire, on introduit les $m_i$ qui indiquent combien d'applications de $H_0$ il y a avant une application de $V(t)$. Par exemple,
@@ -184,7 +190,9 @@ de sorte que
     U(t+\delta t, t) = \sum_{n=0}^{\infty}U^{(n)}(t+\delta t, t)
 \end{equation}
 
+La transformation est assez exotique comme on vient de le voir.
 
+\subsection{Ordre 0}
 
-
+\subsection{Ordre 1}
 
