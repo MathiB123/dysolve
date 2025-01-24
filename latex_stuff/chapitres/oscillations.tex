@@ -1,4 +1,5 @@
-\section{Oscillatory drive problem}
+\section{Application à un drive oscillant}
+Un drive est une onde (un pulse) qu'on envoie sur un transmon (qubit) afin de manipuler son état. Ici, le drive oscille et cela occasionne des changements de niveaux d'énergie. Le qubit évolue donc avec un hamiltonien dépendant du temps et, dans ce contexte, on s'intéresse à (1.11).
 \subsection{Préliminaires}
 On considère un hamiltonien dépendant du temps de la forme 
 
@@ -28,10 +29,10 @@ Pour une variation infime de temps et en utilisant la définition de (2.1), on t
     = \sum_{n=0}^{\infty} \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2} (-i)^n H_0...H_0 dt_1...dt_n + ... + \sum_{n=0}^{\infty} \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2}(-i)^n V(t_n)...V(t_1) dt_1...dt_n
 \end{equation}
 
-On peut voir que la distribution des termes correspond à l'ensemble des combinaisons de $n$ opérateurs où on choisit soit $H_0$ ou $V(t)$ pour chacun d'eux. Il y a donc au total $2^n$ termes chacun $n$ opérateurs pouvant alterner entre des suites de $H_0$ ou de $V(t)$ de différentes longueurs. 
+On peut voir que la distribution des termes correspond à l'ensemble des combinaisons de $n$ opérateurs où on choisit soit $H_0$ ou $V(t)$ pour chacun d'eux. Il y a donc au total $2^n$ termes chacun $n$ opérateurs pouvant alterner entre des suites de $H_0$ ou de $V(t)$ de différentes longueurs. On s'apprête maintenant à réécrire (2.2) différement et la dérivation pour y arriver peut facilement porter à confusion. Il est recommandé d'essayer de faire soi-même la dérivation en lisant ce qui suit pour aider à la compréhension. 
 
 \subsection{Dérivation (partie 1)}
-On considère maintenant pour la suite $n$ comme étant le nombre de $V(t)$ présents dans chaque terme de (2.2) et on omet temporairement les indices $V(t_j)$ pour éviter de se mélanger avec l'ancienne écriture. Il faut alors un nouveau moyen d'écrire (2.2) avec ce changement de variables. Pour se faire, on introduit les $m_i$ qui indiqueront combien d'applications de $H_0$ il y a avant une application de $V(t)$. Par exemple,
+On considère maintenant $n$ comme étant le nombre de $V(t)$ présents dans chaque terme de (2.2) et on omet temporairement les indices $V(t_j)$ pour éviter de se mélanger avec l'ancienne écriture. Il ne s'agit plus du même $n$ de (2.2) et il faut alors un nouveau moyen d'écrire tout cela avec ce changement de variables. Pour se faire, on introduit les $m_i$ qui indiquent combien d'applications de $H_0$ il y a avant une application de $V(t)$. Par exemple,
 
 \begin{equation*}
     H_0V(t)H_0H_0 = (H_0)^1V(t)(H_0)^2 = (H_0)^{m_1}V(t)(H_0)^{m_0} \implies m_0 = 2, m_1 = 1
@@ -48,7 +49,7 @@ En général, ils sont indexés de $m_0$ à $m_n$, car pour un nombre $n$ de $V(
 
 
 
-Cependant, par la somme infinie de (2.2), ces blocs peuvent être arbitrairement longs, faisant en sorte que les $m_i$ peuvent prendre des valeurs entre 0 et l'infini. Il est plus concis de les mettre dans un vecteur $\boldsymbol{m} = \left[m_n, ..., m_0\right] \in \mathbb{Z}^{n+1}_+$. Ainsi, de manière générale, on peut écrire toute chaîne d'opérateurs comme 
+Cependant, chaque terme de (2.2) a une somme infinie. Ainsi, ces blocs peuvent être arbitrairement longs, faisant en sorte que les $m_i$ peuvent prendre des valeurs entre 0 et l'infini. Il est plus concis de les mettre dans un vecteur $\boldsymbol{m} = \left[m_n, ..., m_0\right] \in \mathbb{Z}^{n+1}_+$. Ainsi, on peut écrire toute chaîne d'opérateurs comme 
 
 \begin{equation}
     (H_0)^{m_n}V(t)(H_0)^{m_{n-1}}V(t)...(H_0)^{m_1}V(t)(H_0)^{m_0}
@@ -67,7 +68,7 @@ La prochaine étape est maintenant de retrouver les indices dans les $V(t)$ avec
     H_0V(t)H_0V(t)H_0 \implies \boldsymbol{m} = \left[1, 1, 1\right]
 \end{equation*}
 
-Le premier $V(t)$ s'applique nécessairement après $m_0 = 1$ opérateur $H_0$. Le deuxième s'applique nécessairement après $m_0 = 1$ opérateur $H_0$, un $V(t)$ puis $m_1 = 1$ opérateur $H_0$. Si $p \in \left[1..n\right]$ est une variable qui passe en travers des $n$ opérateurs $V(t)$, alors il est facile de voir qu'on indexe $V(t)$ par la fonction 
+Le premier $V(t)$ s'applique nécessairement après $m_0 = 1$ opérateur $H_0$. Le deuxième s'applique nécessairement après $m_0 = 1$ opérateur $H_0$, un $V(t)$ puis $m_1 = 1$ opérateur $H_0$. Si $p \in \left[1..n\right]$ est une variable qui passe au travers des $n$ opérateurs $V(t)$, alors il est facile de voir l'indexage $V(t_{l(p)})$ où
 
 \begin{equation}
     l(p) = \left(\sum_{j=0}^{p-1}m_j\right) + p
@@ -79,57 +80,68 @@ Pour reprendre l'exemple, on aurait
     H_0V(t_{l(2)})H_0V(t_{l(1)})H_0 = H_0V(t_{m_1 + m_0 + 2})H_0V(t_{m_0 + 1})H_0 = H_0V(t_4)H_0V(t_2)H_0
 \end{equation*}
 
-ce qui exactement ce qu'on aurait dans (2.2).
+ce qui est exactement comme dans (2.2).
 
 \subsection{Dérivation (partie 3)}
-Ensuite, on étend les $V(t_{l(p)})$ selon leur définition :
+Ensuite, on étend les $V(t_{l(p)})$ selon leur définition qu'on rappelle ici.
 
 \begin{equation*}
     V(t_{l(p)}) = X\left(\frac{e^{i\omega t_{l(p)}} + e^{-i\omega t_{l(p)}}}{2}\right)
 \end{equation*}
 
-
-
-
-
-
-
-
-
-
-
-\newpage
-Dans le contexte général de la partie avec les intégrales de (2.2), les équations (2.3) et (2.4) donnent 
+Toujours avec le même exemple,
 
 \begin{equation*}
-    \int_{t}^{t+\delta t}\int_{t}^{t_M}...\int_{t}^{t_2}(-i)^M (H_0)^{m_n}V(t)...V(t)(H_0)^{m_0}dt_1...dt_M
+    H_0V(t_4)H_0V(t_2)H_0 = \left(\frac{e^{i\omega t_4} + e^{-i\omega t_4}}{2}\right)\left(\frac{e^{i\omega t_2} + e^{-i\omega t_2}}{2}\right)H_0XH_0XH_0 
 \end{equation*}
+\begin{equation*}
+    = \frac{1}{2^2}\left(e^{i\omega t_2}e^{i\omega t_4} + e^{i\omega t_2}e^{-i\omega t_4} + e^{-i\omega t_2}e^{i\omega t_4} + e^{-i\omega t_2}e^{-i\omega t_4}\right)H_0XH_0XH_0
+\end{equation*}
+
+On introduit maintenant le vecteur à $n$ dimensions $\boldsymbol{\omega}_n$ dont chacun de ses éléments peut soit être $+\omega$ ou $-\omega$. On peut aller chercher l'élément $i$ par $\boldsymbol{\omega}_n[i]$. Pour un $n$ donné, on voit qu'il en existe $2^n$ différents qu'on rassemble dans $\left\{\boldsymbol{\omega}_n\right\}$. Notamment, 
+
+\begin{equation*}
+    \left\{\boldsymbol{\omega}_2\right\} = \left\{\left[+\omega, +\omega\right], \left[+\omega, -\omega\right], \left[-\omega, +\omega\right], \left[-\omega, -\omega\right]\right\}    
+\end{equation*}
+
+On peut alors réécrire le produit d'exponentielles comme
+
+\begin{equation*}
+    \frac{1}{2^2}\sum_{\left\{\boldsymbol{\omega}_2\right\}}\left(\prod_{p=1}^{2}e^{i\boldsymbol{\omega}_2[p]t_{l(p)}} H_0XH_0XH_0\right)
+\end{equation*}
+
+Ainsi, (2.3) peut être réécrit de la manière suivante.
+
 \begin{equation}
-    = \int_{t}^{t+\delta t}\int_{t}^{t_M}...\int_{t}^{t_2} (-i)^n (-iH_0)^{m_n}V(t)...V(t)(-iH_0)^{m_0}dt_1...dt_M
+    \frac{1}{2^n}\sum_{\left\{\boldsymbol{\omega}_n\right\}}\left(\prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p]t_{l(p)}} (H_0)^{m_n}X ... X(H_0)^{m_0}\right)
 \end{equation}
 
+\subsection{Dérivation (partie 4)}
+Il est maintenant temps de remettre les précédentes parties dans le contexte de (2.2). D'abord, on se retrouve avec
+
+\begin{equation*}
+    \int_{t}^{t + \delta t}\int_{t}^{t_M}...\int_{t}^{t_2} (-i)^M \left(\frac{1}{2^n}\sum_{\left\{\boldsymbol{\omega}_n\right\}}\left(\prod_{p=1}^{n} e^{i\boldsymbol{\omega}_n[p]t_{l(p)}} (H_0)^{m_n}X...X(H_0)^{m_0}\right)\right)dt_1 ... dt_M
+\end{equation*}
+\begin{equation*}
+    = \frac{1}{2^n}\sum_{\left\{\boldsymbol{\omega}_n\right\}}\left(\int_{t}^{t + \delta t}\int_{t}^{t_M}...\int_{t}^{t_2} (-iH_0)^{m_n}X...X(-iH_0)^{m_0} \cdot (-i)^n \prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p]t_{l(p)}} dt_1 ... dt_M\right)
+\end{equation*}
+
+Il y a aussi une somme infinie pour chaque terme qu'on absorbe dans les différent longueurs $m_i$. On doit donc ajouter
+
+\begin{equation*}
+    \frac{1}{2^n}\sum_{\left\{\boldsymbol{\omega}_n\right\}}\sum_{\boldsymbol{m} \in \mathbb{Z}^{n+1}_+}\left(\int_{t}^{t + \delta t}\int_{t}^{t_M}...\int_{t}^{t_2} (-iH_0)^{m_n}X...X(-iH_0)^{m_0} \cdot (-i)^n \prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p]t_{l(p)}} dt_1 ... dt_M\right)
+\end{equation*}
+
+Puis, on doit sommer la précédente équation pour tous les nombres $n$ de $V(t)$.
+
+\begin{equation*}
+    \sum_{n=0}^{\infty}\sum_{\left\{\boldsymbol{\omega}_n\right\}}\frac{1}{2^n}\sum_{\boldsymbol{m} \in \mathbb{Z}^{n+1}_+}\left(\int_{t}^{t + \delta t}\int_{t}^{t_M}...\int_{t}^{t_2} (-iH_0)^{m_n}X...X(-iH_0)^{m_0} \cdot (-i)^n \prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p]t_{l(p)}} dt_1 ... dt_M\right)
+\end{equation*}
+
+L'expression ci-haut est alors complètement équivalente à (2.2).
 
 
-% Les $V(t)$, selon leur positionnement, viennent briser des suites de $H_0...H_0$ en plusieurs petites chaînes. Par exemple, un des termes dans (2.2) est 
 
-% \begin{equation*}
-%     H_0...H_0V(t_1) = (H_0)^{n-1}V(t_1)    
-% \end{equation*}
-
-% et on voit alors qu'il y a une chaîne de $n-1$ opérateurs $H_0$ à gauche de $V(t_1)$. Sinon, un des termes présents
-
-% \begin{equation*}
-%     H_0...H_0V(t_4)H_0H_0V(t_1) = (H_0)^{n-4}V(t_4)(H_0)^2V(t_1)    
-% \end{equation*}
-
-% nous dit qu'il y a d'abord $V(t_1)$, puis deux $H_0$, ensuite $V(t_4)$ et finalement $n-4$ opérateurs $H_0$. De plus, par définition, on peut remplacer les $V(t)$ par $X\left(\frac{e^{i \omega t} + e^{-i\omega t}}{2}\right)$. Ainsi,
-
-% \begin{equation*}
-%     (H_0)^{n-1}V(t_1) = (H_0)^{n-1}X\left(\frac{e^{i \omega t_1} + e^{-i\omega t_1}}{2}\right) = \frac{1}{2}\left(e^{i \omega t_1} + e^{-i\omega t_1}\right)(H_0)^{n-1}X
-% \end{equation*}
-% \begin{equation*}
-%     (H_0)^{n-4}V(t_4)(H_0)^2V(t_1) = \frac{1}{2^2}\left(e^{i \omega t_1} + e^{-i\omega t_1}\right)\left(e^{i \omega t_4} + e^{-i\omega t_4}\right)(H_0)^{n-4}X(H_0)^2X
-% \end{equation*}
 
 
 

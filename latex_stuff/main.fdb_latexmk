@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1737667271.45391 "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" "main.pdf" "main" 1737667272.52826 0
+["pdflatex"] 1737733055.11304 "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" "main.pdf" "main" 1737733056.29496 0
   "/etc/texmf/web2c/texmf.cnf" 1736284741.41123 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" 1737486918.00596 2245 14a23adf0321af318d19a0f31fad84e5 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -47,7 +47,9 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb" 1248133631 30457 bc0868ebece724ed7c3d37e3d9bff7bd ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb" 1248133631 39386 0bb525d495ceab21fe797301a586e0d7 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1248133631 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf" 1703367853 67406 dceb79d013836a96b38471bc632b9fc3 ""
@@ -240,12 +242,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1736523425.67346 165051 331a4b0cc8c79ccd6b2fbd918be026fc ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736523451 6837863 8e982e5ba70809c29420bac6757cc55b ""
-  "chapitres/eq_maitre.tex" 1737555644.24928 23262 4909413410e02245318810931e38d735 ""
-  "chapitres/oscillations.tex" 1737667271.15507 6398 00d257e1250156ea91900de7e36f432e ""
-  "main.aux" 1737667272.38207 1951 f3b2f9f4c7bb1c238669811acb6267e2 "pdflatex"
-  "main.out" 1737667272.38307 2439 64fcff576ee791b618738ff4e27b2d39 "pdflatex"
+  "chapitres/eq_maitre.tex" 1737725086.31607 23263 4684d62ee145f109b9d28ccae3a28b20 ""
+  "chapitres/oscillations.tex" 1737733054.78275 8554 26c837df8d9f1cb94530e68ab63a338d ""
+  "main.aux" 1737733056.13675 2088 53996a41efb462b36634bf198b1d08ae "pdflatex"
+  "main.out" 1737733056.13775 2661 f24936657e7634a3b1457d1016eeaeab "pdflatex"
   "main.tex" 1737486918.00596 2245 14a23adf0321af318d19a0f31fad84e5 ""
-  "main.toc" 1737667272.38307 1166 72b316188667cb16594d43d220295797 "pdflatex"
+  "main.toc" 1737733056.13875 1262 67bc5ead2ef9338ea50c05429e171ce4 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
