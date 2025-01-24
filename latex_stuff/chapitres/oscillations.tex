@@ -1,6 +1,9 @@
 \section{Application à un drive oscillant}
-Un drive est une onde (un pulse) qu'on envoie sur un transmon (qubit) afin de manipuler son état. Ici, le drive oscille et cela occasionne des changements de niveaux d'énergie. Le qubit évolue donc avec un hamiltonien dépendant du temps et, dans ce contexte, on s'intéresse à (1.11).
-\subsection{Préliminaires}
+Un drive est une onde (un pulse) qu'on envoie sur un transmon (qubit) afin de manipuler son état. Ici, le drive oscille et cela occasionne des changements de niveaux d'énergie. Le qubit évolue donc avec un hamiltonien dépendant du temps.
+
+\subsection{Dérivation}
+On s'intéresse à (1.11) dans ce contexte.
+\subsubsection{Préliminaires}
 On considère un hamiltonien dépendant du temps de la forme 
 
 \begin{equation}
@@ -31,7 +34,7 @@ Pour une variation infime de temps et en utilisant la définition de (2.1), on t
 
 On peut voir que la distribution des termes correspond à l'ensemble des combinaisons de $n$ opérateurs où on choisit soit $H_0$ ou $V(t)$ pour chacun d'eux. Il y a donc au total $2^n$ termes chacun $n$ opérateurs pouvant alterner entre des suites de $H_0$ ou de $V(t)$ de différentes longueurs. On s'apprête maintenant à réécrire (2.2) différement et la dérivation pour y arriver peut facilement porter à confusion. Il est recommandé d'essayer de faire soi-même la dérivation en lisant ce qui suit pour aider à la compréhension. 
 
-\subsection{Dérivation (partie 1)}
+\subsubsection{Dérivation (partie 1)}
 On considère maintenant $n$ comme étant le nombre de $V(t)$ présents dans chaque terme de (2.2) et on omet temporairement les indices $V(t_j)$ pour éviter de se mélanger avec l'ancienne écriture. Il ne s'agit plus du même $n$ de (2.2) et il faut alors un nouveau moyen d'écrire tout cela avec ce changement de variables. Pour se faire, on introduit les $m_i$ qui indiquent combien d'applications de $H_0$ il y a avant une application de $V(t)$. Par exemple,
 
 \begin{equation*}
@@ -61,7 +64,7 @@ dont on obtient sa longueur $M$ (le nombre total d'opérateurs) grâce à
     M = \left(\sum_{i=0}^{n}m_i\right) + n
 \end{equation}
 
-\subsection{Dérivation (partie 2)}
+\subsubsection{Dérivation (partie 2)}
 La prochaine étape est maintenant de retrouver les indices dans les $V(t)$ avec notre nouvelle notation. On sait déjà qu'il y aura $n$ opérateurs $V(t)$, mais on doit pouvoir retrouver leur positionnement dans la chaîne d'opérateurs. On peut simplement compter combien il y a de $H_0$ et d'autres $V(t)$ avant celui qui nous intéresse. Par exemple, pour $n=2$, on pourrait avoir la chaîne
 
 \begin{equation*}
@@ -82,7 +85,7 @@ Pour reprendre l'exemple, on aurait
 
 ce qui est exactement comme dans (2.2).
 
-\subsection{Dérivation (partie 3)}
+\subsubsection{Dérivation (partie 3)}
 Ensuite, on étend les $V(t_{l(p)})$ selon leur définition qu'on rappelle ici.
 
 \begin{equation*}
@@ -116,7 +119,7 @@ Ainsi, (2.3) peut être réécrit de la manière suivante.
     \frac{1}{2^n}\sum_{\left\{\boldsymbol{\omega}_n\right\}}\left(\prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p]t_{l(p)}} (H_0)^{m_n}X ... X(H_0)^{m_0}\right)
 \end{equation}
 
-\subsection{Dérivation (partie 4)}
+\subsubsection{Dérivation (partie 4)}
 Il est maintenant temps de remettre les précédentes parties dans le contexte de (2.2). D'abord, on se retrouve avec
 
 \begin{equation*}
@@ -126,7 +129,7 @@ Il est maintenant temps de remettre les précédentes parties dans le contexte d
     = \frac{1}{2^n}\sum_{\left\{\boldsymbol{\omega}_n\right\}}\left(\int_{t}^{t + \delta t}\int_{t}^{t_M}...\int_{t}^{t_2} (-iH_0)^{m_n}X...X(-iH_0)^{m_0} \cdot (-i)^n \prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p]t_{l(p)}} dt_1 ... dt_M\right)
 \end{equation*}
 
-Il y a aussi une somme infinie pour chaque terme qu'on absorbe dans les différent longueurs $m_i$. On doit donc ajouter
+Il y a ensuite une somme infinie pour chaque terme qu'on absorbe dans les différentes longueurs $m_i$. On doit donc ajouter
 
 \begin{equation*}
     \frac{1}{2^n}\sum_{\left\{\boldsymbol{\omega}_n\right\}}\sum_{\boldsymbol{m} \in \mathbb{Z}^{n+1}_+}\left(\int_{t}^{t + \delta t}\int_{t}^{t_M}...\int_{t}^{t_2} (-iH_0)^{m_n}X...X(-iH_0)^{m_0} \cdot (-i)^n \prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p]t_{l(p)}} dt_1 ... dt_M\right)
@@ -135,16 +138,51 @@ Il y a aussi une somme infinie pour chaque terme qu'on absorbe dans les différe
 Puis, on doit sommer la précédente équation pour tous les nombres $n$ de $V(t)$.
 
 \begin{equation*}
-    \sum_{n=0}^{\infty}\sum_{\left\{\boldsymbol{\omega}_n\right\}}\frac{1}{2^n}\sum_{\boldsymbol{m} \in \mathbb{Z}^{n+1}_+}\left(\int_{t}^{t + \delta t}\int_{t}^{t_M}...\int_{t}^{t_2} (-iH_0)^{m_n}X...X(-iH_0)^{m_0} \cdot (-i)^n \prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p]t_{l(p)}} dt_1 ... dt_M\right)
+    U(t+\delta t, t) = \sum_{n=0}^{\infty}\sum_{\left\{\boldsymbol{\omega}_n\right\}}\frac{1}{2^n}\sum_{\boldsymbol{m} \in \mathbb{Z}^{n+1}_+}\left(\int_{t}^{t + \delta t}\int_{t}^{t_M}...\int_{t}^{t_2} (-iH_0)^{m_n}X...X(-iH_0)^{m_0} \cdot (-i)^n \prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p]t_{l(p)}} dt_1 ... dt_M\right)
 \end{equation*}
 
-L'expression ci-haut est alors complètement équivalente à (2.2).
+\subsubsection{Dérivation (dernière partie)}
+Finalement, on procède simplement à un changement de variables $t_i^{'} = t_i - t$. Ainsi, 
 
+\begin{equation*}
+    dt_i^{'} = dt_i - dt = dt_i    
+\end{equation*}
+\begin{equation*}
+    t_i = t_i^{'} + t
+\end{equation*}
+\begin{equation*}
+    t_i \in \left[t, t_j\right] \implies t_i^{'} \in [0, t_j^{'}]
+\end{equation*}
 
+nous donnent tout ce qu'il faut pour faire le changement de variables.
 
+\begin{equation*}
+    U(t+\delta t, t) = \sum_{n=0}^{\infty}\sum_{\left\{\boldsymbol{\omega}_n\right\}}\frac{1}{2^n}\sum_{\boldsymbol{m} \in \mathbb{Z}^{n+1}_+}\left(\int_{0}^{\delta t}\int_{0}^{t_M^{'}}...\int_{0}^{t_2^{'}} (-iH_0)^{m_n}X...X(-iH_0)^{m_0} \cdot (-i)^n \prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p](t_{l(p)}^{'} + t)} dt_1^{'} ... dt_M^{'}\right)
+\end{equation*}
+\begin{equation*}
+    = \sum_{n=0}^{\infty}\sum_{\left\{\boldsymbol{\omega}_n\right\}}\left(\prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p]t}\right)\frac{1}{2^n}\sum_{\boldsymbol{m} \in \mathbb{Z}^{n+1}_+}\left(\int_{0}^{\delta t}\int_{0}^{t_M^{'}}...\int_{0}^{t_2^{'}} (-iH_0)^{m_n}X...X(-iH_0)^{m_0} \cdot (-i)^n \prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p]t_{l(p)}^{'}} dt_1^{'} ... dt_M^{'}\right)
+\end{equation*}
+\begin{equation*}
+    = \sum_{n=0}^{\infty}\sum_{\left\{\boldsymbol{\omega}_n\right\}}e^{i\sum_{p=1}^{n}\boldsymbol{\omega}_n[p]t}\frac{1}{2^n}\sum_{\boldsymbol{m} \in \mathbb{Z}^{n+1}_+}\left(\int_{0}^{\delta t}\int_{0}^{t_M^{'}}...\int_{0}^{t_2^{'}} (-iH_0)^{m_n}X...X(-iH_0)^{m_0} \cdot (-i)^n \prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p]t_{l(p)}^{'}} dt_1^{'} ... dt_M^{'}\right)
+\end{equation*}
 
+Ce n'est pas très beau, alors on définit
 
+\begin{equation}
+    S^{(n)}_{\boldsymbol{m}}(\boldsymbol{\omega}_n, \delta t) = \int_{0}^{\delta t}\int_{0}^{t_M^{'}}...\int_{0}^{t_2^{'}} (-iH_0)^{m_n}X...X(-iH_0)^{m_0} \cdot (-i)^n \prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p]t_{l(p)}^{'}} dt_1^{'} ... dt_M^{'}
+\end{equation}
+\begin{equation}
+    S^{(n)}(\boldsymbol{\omega}_n, \delta t) = \frac{1}{2^n}\sum_{\boldsymbol{m} \in \mathbb{Z}^{n+1}_+} S^{(n)}_{\boldsymbol{m}}(\boldsymbol{\omega}_n, \delta t)
+\end{equation}
+\begin{equation}
+    U^{(n)}(t + \delta t, t) = \sum_{\left\{\boldsymbol{\omega}_n\right\}}e^{i\sum_{p=1}^{n}\boldsymbol{\omega}_n[p]t}S^{(n)}(\boldsymbol{\omega}_n, \delta t)
+\end{equation}
 
+de sorte que 
+
+\begin{equation}
+    U(t+\delta t, t) = \sum_{n=0}^{\infty}U^{(n)}(t+\delta t, t)
+\end{equation}
 
 
 
