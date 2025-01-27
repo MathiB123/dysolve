@@ -237,17 +237,24 @@ Sachant dans ce cas que $M = m_0 + m_1 + 1 \implies m_0 + 1 = M-m_1$,
     = -i (-iH_0)^{m_1}X
     \int_{0}^{\delta t}dt_M ... \int_{0}^{t^{'}_{M-m_1+1}}e^{i\boldsymbol{\omega}_1[1]t^{'}_{M-m_1}} dt_{M-m_1}^{'}\int_{0}^{t^{'}_{M-m_1}}... \int_{0}^{t_2^{'}}(-iH_0)^{m_0} dt_1^{'} ... dt_{M - m_1 - 1}^{'}
 \end{equation*}
+
+IL FAUT ATTENDRE À LA FIN COMPLÈTMENT AVANT D'INTÉGRER POUR QUE ÇA DONNE ÉQ. 12 
+
+
 \begin{equation*}
-    = -i(-iH_0)^{m_1}X\frac{(\delta t)^{m_1}}{m_1!} \left(\frac{1}{i\boldsymbol{\omega}_1}e^{i\boldsymbol{\omega}_1[1]t^{'}_{M-m_1}}\eval_{0}^{\delta t}\right) \frac{(\delta t)^{m_0}}{m_0!}(-iH_0)^{m_0} = -\frac{1}{\boldsymbol{\omega}_1}\frac{(-i H_0 \delta t)^{m_1}}{m_1!}X\frac{(-iH_0 \delta t)^{m_0}}{m_0!}\left(e^{i\boldsymbol{\omega}_1[1]\delta t} - 1\right)
+    = -i(-iH_0)^{m_1}X\frac{(\delta t)^{m_1}}{m_1!} \left(\frac{1}{i\boldsymbol{\omega}_1[1]}e^{i\boldsymbol{\omega}_1[1]t^{'}_{M-m_1}}\eval_{0}^{\delta t}\right) \frac{(\delta t)^{m_0}}{m_0!}(-iH_0)^{m_0} 
+\end{equation*}
+\begin{equation*}
+    = -\frac{1}{\boldsymbol{\omega}_1[1]}\frac{(-i H_0 \delta t)^{m_1}}{m_1!}X\frac{(-iH_0 \delta t)^{m_0}}{m_0!}\left(e^{i\boldsymbol{\omega}_1[1]\delta t} - 1\right)
 \end{equation*}
 
 De là,
 
 \begin{equation*}
-    S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{1}{2}\sum_{m_1 = 0}^{\infty}\sum_{m_0 = 0}^{\infty}\left(-\frac{1}{\boldsymbol{\omega}_1}\frac{(-i H_0 \delta t)^{m_1}}{m_1!}X\frac{(-iH_0 \delta t)^{m_0}}{m_0!}\left(e^{i\boldsymbol{\omega}_1[1]\delta t} - 1\right)\right)
+    S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{1}{2}\sum_{m_1 = 0}^{\infty}\sum_{m_0 = 0}^{\infty}\left(-\frac{1}{\boldsymbol{\omega}_1[1]}\frac{(-i H_0 \delta t)^{m_1}}{m_1!}X\frac{(-iH_0 \delta t)^{m_0}}{m_0!}\left(e^{i\boldsymbol{\omega}_1[1]\delta t} - 1\right)\right)
 \end{equation*}
 \begin{equation*}
-    = \frac{-1}{2\boldsymbol{\omega}_1}\left(e^{i\boldsymbol{\omega}_1[1]\delta t} - 1\right)\sum_{m_1 = 0}^{\infty}\frac{(-i H_0 \delta t)^{m_1}}{m_1!} X \sum_{m_0 = 0}^{\infty}\frac{(-i H_0 \delta t)^{m_0}}{m_0!}
+    = \frac{-1}{2\boldsymbol{\omega}_1[1]}\left(e^{i\boldsymbol{\omega}_1[1]\delta t} - 1\right)\sum_{m_1 = 0}^{\infty}\frac{(-i H_0 \delta t)^{m_1}}{m_1!} X \sum_{m_0 = 0}^{\infty}\frac{(-i H_0 \delta t)^{m_0}}{m_0!}
 \end{equation*}
 
 Par la définition de $H_0$,
@@ -265,10 +272,10 @@ Par la définition de $H_0$,
 de sorte que
 
 \begin{equation*}
-    S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{-1}{2\boldsymbol{\omega}_1}\left(e^{i\boldsymbol{\omega}_1[1]\delta t} - 1\right)\sum_{k} e^{-i\lambda_k\delta t} \ket{k}\bra{k} X \sum_{k^\text{'}} e^{-i\lambda_{k^\text{'}}\delta t} \ket{k^\text{'}}\bra{k^\text{'}}
+    S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{-1}{2\boldsymbol{\omega}_1[1]}\left(e^{i\boldsymbol{\omega}_1[1]\delta t} - 1\right)\sum_{k} e^{-i\lambda_k\delta t} \ket{k}\bra{k} X \sum_{k^\text{'}} e^{-i\lambda_{k^\text{'}}\delta t} \ket{k^\text{'}}\bra{k^\text{'}}
 \end{equation*}
 \begin{equation*}
-    = \frac{-1}{2\boldsymbol{\omega}_1}\left(e^{i\boldsymbol{\omega}_1[1]\delta t} - 1\right)\sum_{k}\sum_{k^\text{'}} e^{-i (\lambda_k + \lambda_{k^\text{'}})\delta t}\bra{k} X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
+    = \frac{-1}{2\boldsymbol{\omega}_1[1]}\left(e^{i\boldsymbol{\omega}_1[1]\delta t} - 1\right)\sum_{k}\sum_{k^\text{'}} e^{-i (\lambda_k + \lambda_{k^\text{'}})\delta t}\bra{k} X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
 \end{equation*}
 
 
