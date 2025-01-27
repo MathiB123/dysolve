@@ -1,5 +1,6 @@
+\newpage
 \section{Application à un drive oscillant}
-\cite{mythesis} \cite{Shillito_2021} Un drive est une onde (un pulse) qu'on envoie sur un transmon (qubit) afin de manipuler son état. Ici, le drive oscille et cela occasionne des changements de niveaux d'énergie. Le qubit évolue donc avec un hamiltonien dépendant du temps.
+Un drive est une onde (un pulse) qu'on envoie sur un transmon (qubit) afin de manipuler son état. Ici, le drive oscille et cela occasionne des changements de niveaux d'énergie. Le qubit évolue donc avec un hamiltonien dépendant du temps.
 
 \subsection{Dérivation}
 
@@ -32,7 +33,7 @@ Pour une variation infime de temps et en utilisant la définition de (2.1), on t
     = \sum_{n=0}^{\infty} \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2} (-i)^n H_0...H_0 dt_1...dt_n + ... + \sum_{n=0}^{\infty} \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2}(-i)^n V(t_n)...V(t_1) dt_1...dt_n
 \end{equation}
 
-On peut voir que la distribution des termes correspond à l'ensemble des combinaisons de $n$ opérateurs où on choisit soit $H_0$ ou $V(t)$ pour chacun d'eux. Il y a donc au total $2^n$ termes chacun $n$ opérateurs pouvant alterner entre des suites de $H_0$ ou de $V(t)$ de différentes longueurs. Graphiquement, on peut représenter cela par la figure 2. On s'apprête maintenant à réécrire (2.2) différement et la dérivation pour y arriver peut facilement porter à confusion. On essaie d'expliquer le plus possible chaque étape.
+On peut voir que la distribution des termes correspond à l'ensemble des combinaisons de $n$ opérateurs où on choisit soit $H_0$ ou $V(t)$ pour chacun d'eux. Il y a donc au total $2^n$ termes chacun $n$ opérateurs pouvant alterner entre des suites de $H_0$ ou de $V(t)$ de différentes longueurs. Graphiquement, on peut représenter la génération des combinaisons par la figure 2. On s'apprête maintenant à réécrire (2.2) différemment et la dérivation pour y arriver peut facilement porter à confusion. On essaie d'expliquer le plus possible chaque étape.
 
 \begin{figure}[H]
     \centering
@@ -41,7 +42,7 @@ On peut voir que la distribution des termes correspond à l'ensemble des combina
 \end{figure}
 
 \subsubsection{Dérivation (partie 1)}
-On considère maintenant $n$ comme étant le nombre de $V(t)$ présents dans chaque terme de (2.2) et on omet temporairement les indices $V(t_j)$ pour éviter de se mélanger avec l'ancienne écriture. Il ne s'agit plus du même $n$ de (2.2) et il faut alors un nouveau moyen d'écrire tout cela avec ce changement de variables. Pour se faire, on introduit les $m_i$ qui indiquent combien d'applications de $H_0$ il y a avant une application de $V(t)$. Par exemple,
+On considère maintenant $n$ comme étant le nombre de $V(t)$ présents dans chaque terme de (2.2) et on omet temporairement les indices $V(t_j)$ pour éviter de se mélanger avec l'ancienne écriture. Il ne s'agit plus du même $n$ que dans (2.2) et il faut alors un nouveau moyen d'écrire tout cela avec ce changement de variables. Pour se faire, on introduit les $m_i$ qui indiquent combien d'applications de $H_0$ il y a avant une application de $V(t)$. Par exemple,
 
 \begin{equation*}
     H_0V(t)H_0H_0 = (H_0)^1V(t)(H_0)^2 = (H_0)^{m_1}V(t)(H_0)^{m_0} \implies m_0 = 2, m_1 = 1
@@ -190,9 +191,90 @@ de sorte que
     U(t+\delta t, t) = \sum_{n=0}^{\infty}U^{(n)}(t+\delta t, t)
 \end{equation}
 
-La transformation est assez exotique comme on vient de le voir.
+La transformation est assez exotique comme on vient de le voir, mais on verra qu'elle permettra un calcul numérique plus efficace.
 
 \subsection{Ordre 0}
+On calcule explicitement $U^{(0)}(t+\delta t, t)$, soit la branche la plus à gauche dans la figure 2 où la chaîne d'opérateurs ne contient que des $H_0$.
+
+\begin{equation*}
+    S^{(0)}_{\boldsymbol{m}}(\boldsymbol{\omega}_0, \delta t) = \int_{0}^{\delta t}\int_{0}^{t_{m_0}^{'}}...\int_{0}^{t_2^{'}} (-iH_0)^{m_0}dt_1^{'}...dt_{m_0}^{'} = \frac{(-iH_0)^{m_0}}{m_0!}\int_{0}^{\delta t}...\int_{0}^{\delta t}dt_1^{'}...dt_{m_0}^{'} = \frac{(-iH_0\int_{0}^{\delta t}dt^{'})^{m_0}}{m_0!}
+\end{equation*}
+\begin{equation*}
+    = \frac{(-iH_0\delta t)^{m_0}}{m_0!}
+\end{equation*}
+
+où on a utilisé le mettre truc qu'avec les $J_n$. Par la suite,
+
+\begin{equation*}
+    S^{(0)}(\boldsymbol{\omega}_0, \delta t) = \frac{1}{2^0}\sum_{\boldsymbol{m} \in \mathbb{Z}^{0+1}_{+}}S^{(0)}_{\boldsymbol{m}}(\boldsymbol{\omega}_0, \delta t) = \sum_{m_0}^{\infty}\frac{(-iH_0\delta t)^{m_0}}{m_0!} = e^{-iH_0\delta t}
+\end{equation*}
+
+Comme $\left\{\boldsymbol{\omega}_0\right\}$ est vide, on obtient finalement
+
+\begin{equation}
+    U^{(0)}(t+\delta t, t) = e^{-iH_0\delta t}
+\end{equation}
+
+Cela a du sens, car on a seulement des opérateurs indépendants du temps. Donc, on s'attend à ce que l'opérateur d'évolution soit de la même forme que (1.3), ce qui est le cas.
 
 \subsection{Ordre 1}
+On s'attarde ici aux branches avec un seul $V(t)$ à quelque part dans la séquence d'opérateurs qu'on calcule par $ U^{(1)}(t+\delta t, t)$. On sait que $\boldsymbol{m} = [m_1, m_0]$ et que $\left\{\boldsymbol{\omega}_1\right\} = \left\{[+\omega], [-\omega]\right\}$. Ainsi, 
+
+\begin{equation*}
+    S^{(1)}_{\boldsymbol{m}}(\boldsymbol{\omega}_1, \delta t) = -i\int_{0}^{\delta t}\int_{0}^{t_M^{'}}... \int_{0}^{t_2^{'}}(-iH_0)^{m_1}X(-iH_0)^{m_0} e^{i\boldsymbol{\omega}_1[1]t^{'}_{l(1)}}dt_1^{'} ... dt_M^{'}
+\end{equation*}
+\begin{equation*}
+    = -i\int_{0}^{\delta t}\int_{0}^{t_M^{'}}... \int_{0}^{t_2^{'}}(-iH_0)^{m_1}X(-iH_0)^{m_0} e^{i\boldsymbol{\omega}_1[1]t^{'}_{m_0+1}}dt_1^{'} ... dt_M^{'}
+\end{equation*}
+
+Sachant dans ce cas que $M = m_0 + m_1 + 1 \implies m_0 + 1 = M-m_1$,
+
+\begin{equation*}
+    S^{(1)}_{\boldsymbol{m}}(\boldsymbol{\omega}_1, \delta t) = -i (-iH_0)^{m_1}X
+    \int_{0}^{\delta t}\int_{0}^{t_M^{'}}... \int_{0}^{t_2^{'}}(-iH_0)^{m_0} e^{i\boldsymbol{\omega}_1[1]t^{'}_{M-m_1}}dt_1^{'} ... dt_M^{'}
+\end{equation*}
+\begin{equation*}
+    = -i (-iH_0)^{m_1}X
+    \int_{0}^{\delta t}dt_M ... \int_{0}^{t^{'}_{M-m_1+1}}e^{i\boldsymbol{\omega}_1[1]t^{'}_{M-m_1}} dt_{M-m_1}^{'}\int_{0}^{t^{'}_{M-m_1}}... \int_{0}^{t_2^{'}}(-iH_0)^{m_0} dt_1^{'} ... dt_{M - m_1 - 1}^{'}
+\end{equation*}
+\begin{equation*}
+    = -i(-iH_0)^{m_1}X\frac{(\delta t)^{m_1}}{m_1!} \left(\frac{1}{i\boldsymbol{\omega}_1}e^{i\boldsymbol{\omega}_1[1]t^{'}_{M-m_1}}\eval_{0}^{\delta t}\right) \frac{(\delta t)^{m_0}}{m_0!}(-iH_0)^{m_0} = -\frac{1}{\boldsymbol{\omega}_1}\frac{(-i H_0 \delta t)^{m_1}}{m_1!}X\frac{(-iH_0 \delta t)^{m_0}}{m_0!}\left(e^{i\boldsymbol{\omega}_1[1]\delta t} - 1\right)
+\end{equation*}
+
+De là,
+
+\begin{equation*}
+    S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{1}{2}\sum_{m_1 = 0}^{\infty}\sum_{m_0 = 0}^{\infty}\left(-\frac{1}{\boldsymbol{\omega}_1}\frac{(-i H_0 \delta t)^{m_1}}{m_1!}X\frac{(-iH_0 \delta t)^{m_0}}{m_0!}\left(e^{i\boldsymbol{\omega}_1[1]\delta t} - 1\right)\right)
+\end{equation*}
+\begin{equation*}
+    = \frac{-1}{2\boldsymbol{\omega}_1}\left(e^{i\boldsymbol{\omega}_1[1]\delta t} - 1\right)\sum_{m_1 = 0}^{\infty}\frac{(-i H_0 \delta t)^{m_1}}{m_1!} X \sum_{m_0 = 0}^{\infty}\frac{(-i H_0 \delta t)^{m_0}}{m_0!}
+\end{equation*}
+
+Par la définition de $H_0$,
+
+\begin{equation*}
+    \sum_{m_0 = 0}^{\infty}\frac{(-i H_0 \delta t)^{m_0}}{m_0!} = \sum_{m_0 = 0}^{\infty}\frac{(-i \sum_{k}\lambda_k \ket{k}\bra{k} \delta t)^{m_0}}{m_0!} = \sum_{m_0 = 0}^{\infty}\frac{(-i \delta t)^{m_0}}{m_0!} \left(\sum_{k}\lambda_k \ket{k}\bra{k}\right)^{m_0}
+\end{equation*}
+\begin{equation*}
+    = \sum_{m_0 = 0}^{\infty}\frac{(-i \delta t)^{m_0}}{m_0!} \left(\sum_{k_1}\lambda_{k_1} \ket{k_1}\bra{k_1}\sum_{k_2}\lambda_{k_2} \ket{k_2}\bra{k_2}...\right) = \sum_{m_0 = 0}^{\infty}\frac{(-i \delta t)^{m_0}}{m_0!} \left(\sum_{k_1}\sum_{k_2}\lambda_{k_1}\lambda_{k_2} \ket{k_1}\bra{k_1} \ket{k_2}\bra{k_2}...\right) 
+\end{equation*}
+\begin{equation*}
+    = \sum_{m_0 = 0}^{\infty}\frac{(-i \delta t)^{m_0}}{m_0!} \left(\sum_{k}\lambda_k^{m_0} \ket{k}\bra{k}\right) =\sum_{k} \sum_{m_0 = 0}^{\infty}\frac{(-i \lambda_k \delta t)^{m_0}}{m_0!} \ket{k}\bra{k} = \sum_{k} e^{-i\lambda_k\delta t} \ket{k}\bra{k}
+\end{equation*}
+
+de sorte que
+
+\begin{equation*}
+    S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{-1}{2\boldsymbol{\omega}_1}\left(e^{i\boldsymbol{\omega}_1[1]\delta t} - 1\right)\sum_{k} e^{-i\lambda_k\delta t} \ket{k}\bra{k} X \sum_{k^\text{'}} e^{-i\lambda_{k^\text{'}}\delta t} \ket{k^\text{'}}\bra{k^\text{'}}
+\end{equation*}
+\begin{equation*}
+    = \frac{-1}{2\boldsymbol{\omega}_1}\left(e^{i\boldsymbol{\omega}_1[1]\delta t} - 1\right)\sum_{k}\sum_{k^\text{'}} e^{-i (\lambda_k + \lambda_{k^\text{'}})\delta t}\bra{k} X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
+\end{equation*}
+
+
+
+
+
+
+
 
