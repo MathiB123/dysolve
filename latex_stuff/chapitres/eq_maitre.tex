@@ -12,17 +12,17 @@ En définissant un opérateur d'évolution $U(t,t_0)$ qui amène un état du tem
     i \derivative{}{t}U(t,t_0)\ket{\psi(t_0)} = H(t)U(t,t_0)\ket{\psi(t_0)} \implies i \frac{\partial}{\partial t}U(t,t_0) = H(t)U(t,t_0)
 \end{equation}
 
-Ici, la dérivée totale devient partielle par la règle de dérivation en chaîne pour les fonctions multivariables. Par ailleurs, il va de soi que $U(t,t) = \mathbb{I}$ pour tout temps $t$, car il n'y a alors, selon notre définition, aucune évolution qui a lieu. Dans ce cas, comme rien ne se passe, il faut que l'opérateur d'évolution soit l'identité. Aussi, on peut décomposer une évolution $U(t, t_0)$ en plusieurs évolutions une à la suite de l'autre de manière à avoir $U(t,t_0) = U(t,t_1)U(t_1,t_0)$ par exemple (il pourrait y en avoir autant qu'on veut).
+Ici, la dérivée totale devient partielle par la règle de dérivation en chaîne pour les fonctions multivariables. Par ailleurs, il va de soi que $U(t,t) = \mathbb{I}$ pour tout temps $t$, car il n'y a alors, selon notre définition, aucune évolution qui a lieu. Dans ce cas, comme rien ne se passe, il faut que l'opérateur d'évolution soit l'identité. Aussi, on peut décomposer une évolution $U(t, t_0)$ en plusieurs évolutions une à la suite de l'autre de manière à avoir $U(t,t_0) = U(t,t_1)U(t_1,t_0)$ par exemple. Il pourrait y en avoir autant qu'on veut.
 
 \subsection{Système fermé et hamiltonien statique}
-Pour un système fermé et dont l'hamiltonien est statique (donc indépendant du temps), (1.2) devient
+Pour un système fermé avec un hamiltonien statique (donc indépendant du temps), (1.2) devient
 
 \begin{equation}
     i\frac{\partial}{\partial t}U(t,t_0) = HU(t,t_0) \implies \int_{U(t_0,t_0)}^{U(t,t_0)}\frac{\diff U^{'}}{U'} = -iH \int_{t_0}^{t}dt^{'} \implies U(t,t_0) = e^{-iH(t-t_0)}
 \end{equation}
 
 \subsection{Système fermé et hamiltonien dynamique}
-Sachant la forme de l'opérateur d'évolution lorsque l'hamiltonien est constant, on peut approximer l'opérateur d'évolution dans le cas où l'hamiltonien est dynamique. En effet, pour une variation infinitésimale de temps $\delta t$, l'hamiltonien change à peine de sa forme de départ et on peut le considérer comme étant constant sur ce petit intervalle. Lorsqu'on dit constant, on veut plutôt dire que l'hamiltonien est évalué à un point fixe à quelque part dans le petit intervalle de temps et ce pour toute la durée de l'opérateur d'évolution. Ainsi, 
+Sachant la forme de l'opérateur d'évolution lorsque l'hamiltonien est constant, on peut approximer l'opérateur d'évolution dans le cas où l'hamiltonien est dynamique. En effet, pour une variation infinitésimale de temps $\delta t$, l'hamiltonien change à peine de sa forme de départ et on peut le considérer comme étant constant sur ce petit intervalle. Lorsqu'on dit constant, on veut plutôt dire que l'hamiltonien est évalué à un point fixe à quelque part dans le petit intervalle de temps et ce pour toute la durée de ce fragment d'évolution. Ainsi, 
 
 \begin{equation*}
     U(t+\delta t, t) \approx e^{-iH(t)\delta t}
@@ -34,7 +34,7 @@ Ici, on évalue l'hamiltonien à $t$, car de toute manière $\delta t \rightarro
     U(t,t_0) = \prod_{k=1}^{N}U(t_0 + k\epsilon, t_0 + (k-1)\epsilon)
 \end{equation*}
 
-Dans la limite où $\epsilon \rightarrow 0$ (donc où $N \rightarrow \infty$), l'approximation plus haut est valide (les sous-intervalles deviennent infiniment petits) et dès lors on peut se dire que
+Dans la limite où $\epsilon \rightarrow 0$ (donc où $N \rightarrow \infty$), les sous-intervalles deviennent infiniment petits et dès lors on peut se dire avec la précédente approximation que
 
 \begin{equation*}
     U(t_0 + k\epsilon, t_0 + (k-1)\epsilon) \approx e^{-i\epsilon H\left(t_0 + (k-1)\epsilon\right)}
@@ -43,10 +43,10 @@ Dans la limite où $\epsilon \rightarrow 0$ (donc où $N \rightarrow \infty$), l
 Alors,
 
 \begin{equation*}
-    U(t,t_0) = \lim_{\epsilon \rightarrow 0} \prod_{k=1}^{N}U(t_0 + k\epsilon, t_0 + (k-1)\epsilon) = \lim_{\epsilon \rightarrow 0} \prod_{k=1}^{N} e^{-i\epsilon H(t_0 + (k-1)\epsilon)} = \lim_{\epsilon \rightarrow 0} e^{-i\epsilon H(t_0)}e^{-i\epsilon H(t_0 + \epsilon)} ... e^{-i\epsilon H(t-\epsilon)} 
+    U(t,t_0) = \lim_{\epsilon \rightarrow 0} \prod_{k=1}^{N}U(t_0 + k\epsilon, t_0 + (k-1)\epsilon) = \lim_{\epsilon \rightarrow 0} \prod_{k=1}^{N} e^{-i\epsilon H(t_0 + (k-1)\epsilon)}
 \end{equation*}
 
-On serait très tenté de combiner les exponentielles en sommant leur argument, mais on travaille avec des matrices et il faut alors faire attention. Effectivement, on peut combiner deux exponentielles contenant une matrice uniquement lorsque ces matrices commutent. Autrement, il faudrait utiliser la formule de Baker-Campbell-Hausdorff qui ne semble pas nous faire progresser avec son infinité de termes. On s'attarde alors aux deux cas possibles.
+On serait très tenté de combiner les exponentielles en sommant leur argument, mais on travaille avec des matrices et il faut alors faire attention. Effectivement, on peut combiner deux exponentielles contenant une matrice uniquement lorsque ces matrices commutent. Autrement, il faudrait utiliser la formule de Baker-Campbell-Hausdorff et personne ne veut avoir à l'utiliser. On distingue alors deux cas.
 
 \subsubsection{Les hamiltoniens commutent}
 
@@ -59,7 +59,7 @@ D'abord, en supposant que tous les $H(t_i)$ dans les exponentielles commutent en
 On voit clairement que si l'hamiltonien est constant, alors il peut être sorti de l'intégrale redonnant ainsi (1.3).
 
 \subsubsection{Les hamiltoniens ne commutent pas}
-Pour ce cas, on utilise une approche itérative. Depuis (1.2) et par une approche similaire à (1.3), on peut écrire 
+On utilise ici une approche itérative. Depuis (1.2), on peut écrire 
 
 \begin{equation*}
     \int_{U(t_0,t_0)}^{U(t,t_0)}dU^{'} = -i \int_{t_0}^{t}H(t^{'})U(t^{'}, t_0)dt^{'} \implies U(t,t_0) = \mathbb{I} -i\int_{t_0}^{t}H(t^{'})U(t^{'},t_0)dt^{'}
@@ -83,11 +83,7 @@ On répète le processus à l'infini afin d'obtenir
     = \sum_{n=0}^{\infty}(-i)^n \int_{t_0}^{t}\int_{t_0}^{t_1} \ ... \int_{t_0}^{t_{n-1}}H(t_1)H(t_2) ... H(t_n)dt_n ... dt_2 dt_1  
 \end{equation}
 
-ce qu'on appelle une série de Dyson. Par construction, les variables d'intégration respectent $t_1 \geq t_2 \geq ... \geq t_n$ et il est aussi hautement non-trivial de montrer que (1.5) converge. De plus, la notation peut sembler être bizarre pour le terme $n=0$ et $n=1$ avec une borne d'intégration $t_{-1}$ et une intégrale de $t_0$ à $t_0$ respectivement. En tant que tel, à cause de $\int_{t_0}^{t_1} ... \int_{t_0}^{t_{n-1}}$, on comprend implicitement que ça n'a de sens que pour $n\geq2$. Pour le terme $n=0$ et $n=1$, on fait un abus de notation pour les inclure et avoir une équation plus propre. On rappelle ici le terme $n=0$ et $n=1$.
-
-\begin{equation*}
-    n=0 : \mathbb{I}, \ n=1 : -i\int_{t_0}^{t}H(t_1)dt_1
-\end{equation*}
+ce qu'on appelle communément une série de Dyson. Par construction, les variables d'intégration respectent $t_1 \geq t_2 \geq ... \geq t_n$ et il est aussi hautement non-trivial de montrer que (1.5) converge bien vers $U(t,t_0)$. De plus, la notation peut sembler être bizarre pour le terme $n=0$ et $n=1$ avec une borne d'intégration $t_{-1}$ et une intégrale de $t_0$ à $t_0$ respectivement. En tant que tel, à cause de $\int_{t_0}^{t_1} ... \int_{t_0}^{t_{n-1}}$, on comprend implicitement que ça n'a de sens que pour $n\geq2$. Pour le terme $n=0$ et $n=1$, on fait un abus de notation pour les inclure et avoir une équation plus propre.
 
 Il peut être difficile de voir comment (1.5) se réduit à (1.4) ou à (1.3) avec un changement approprié des conditions. On introduit alors l'opérateur de produit chronologique $T$ qui réordonne un produit matriciel de manière à ce que l'argument en temps des matrices dans le produit soit décroissant de la gauche vers la droite. Autrement dit,
 
@@ -125,7 +121,7 @@ La région d'intégration fait alors une réflexion par rapport à l'axe de la d
     J_2 = \int_{t_0}^{t}\int_{t_1}^{t}H(t_2)H(t_1)dt_2dt_1 = \int_{t_0}^{t}\int_{t_1}^{t}T\left[H(t_1)H(t_2)\right]dt_2dt_1
 \end{equation*}
 
-Au final, on vient de trouver 2 formes différentes pour $J_2$.
+Si on résume, on vient de trouver 2 formes différentes pour $J_2$.
 
 \begin{equation}
     J_2 = \int_{t_0}^{t}\int_{t_0}^{t_1}T\left[H(t_1)H(t_2)\right]dt_2dt_1 = \int_{t_0}^{t}\int_{t_1}^{t}T\left[H(t_1)H(t_2)\right]dt_2dt_1
@@ -155,9 +151,9 @@ En général, pour $J_n$, il existera $n!$ façons différentes de l'écrire (po
 
 qu'on remplace dans (1.5) donnant ainsi
 
-\begin{equation*}
+\begin{equation}
     U(t,t_0) = \sum_{n=0}^{\infty}\frac{(-i)^n}{n!}\int_{t_0}^{t}\int_{t_0}^{t}...\int_{t_0}^{t} T \left[H(t_1)H(t_2)...H(t_n)\right]dt_n ... dt_2 dt_1
-\end{equation*}
+\end{equation}
 
 De là, si les hamiltoniens commutent (donc que $T$ ne fait rien), on voit qu'on peut retomber sur (1.4).
 
@@ -168,20 +164,20 @@ De là, si les hamiltoniens commutent (donc que $T$ ne fait rien), on voit qu'on
     = \sum_{n=0}^{\infty}\frac{1}{n!}\left(-i\int_{t_0}^{t}H(t^{'})dt^{'}\right)^n = e^{-i\int_{t_0}^{t}H(t^{'})dt^{'}}
 \end{equation*}
 
-Dans les ouvrages, on utilise plutôt l'écriture
+Dans les ouvrages, (1.10) se note souvent
 
 \begin{equation}
     U(t,t_0) = Te^{-i\int_{t_0}^{t}H(t^{'})dt^{'}} = \sum_{n=0}^{\infty}\frac{(-i)^n}{n!}\int_{t_0}^{t}\int_{t_0}^{t}...\int_{t_0}^{t} T \left[H(t_1)H(t_2)...H(t_n)\right]dt_n ... dt_2 dt_1
 \end{equation}
 
 \subsubsection{Écriture alternative}
-Il peut être parfois plus logique d'écrire (1.5) selon l'ordre d'application des hamiltoniens sur un état (ce que certains auteurs préfèrent). On veut dire par là qu'on aimerait avoir l'indice $t_1$ pour l'hamiltonien le plus à droite, $t_2$ pour celui à sa gauche et $t_n$ pour l'hamiltonien le plus à gauche. Autrement dit, on veut renverser l'écriture de (1.5). On part depuis 
+Il peut être parfois plus logique d'écrire (1.5) selon l'ordre d'application des hamiltoniens sur un état (ce que certains auteurs préfèrent). On veut dire par là qu'on aimerait avoir l'indice $t_1$ pour l'hamiltonien le plus à droite, $t_2$ pour celui à sa gauche et $t_n$ pour l'hamiltonien le plus à gauche. Autrement dit, on veut renverser l'ordre d'écriture de (1.5). On part depuis 
 
 \begin{equation*}
     U(t,t_0) = \mathbb{I} -i\int_{t_0}^{t}H(t_1)U(t_1,t_0)dt_1
 \end{equation*}
 
-Auparavant, en remplaçant l'équation dans elle-même, on a 
+Auparavant, en remplaçant l'équation dans elle-même, on aurait 
 
 \begin{equation*}
     U(t,t_0) = \mathbb{I} -i\int_{t_0}^{t}H(t_1)dt_1 - \int_{t_0}^{t}\int_{t_0}^{t_1}H(t_1)H(t_2)U(t_2,t_0)dt_2dt_1
