@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1738271647.54623 "main.aux" "main.bbl" "main" 1738272397.06092 0
+["bibtex main"] 1738273996.92506 "main.aux" "main.bbl" "main" 1738274009.05975 0
   "./refs.bib" 1737745282.37479 1451 9e8e7a9ee647f93e286e0be6b20b95c4 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1738272396.84196 3109 b66d6808071c53b1d04fc7b5405de01c "pdflatex"
+  "main.aux" 1738274008.85907 2931 104e1d3264e2bbc23ea82fe48407e5db "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1738272395.69595 "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" "main.pdf" "main" 1738272397.06115 0
+["pdflatex"] 1738274007.78228 "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" "main.pdf" "main" 1738274009.05999 0
   "/etc/texmf/web2c/texmf.cnf" 1736284741.41123 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" 1738008989.97511 2302 dfec5a78a925782ce492de925203285f ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -253,14 +253,14 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1736523425.67346 165051 331a4b0cc8c79ccd6b2fbd918be026fc ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736523451 6837863 8e982e5ba70809c29420bac6757cc55b ""
   "chapitres/eq_maitre.tex" 1738271963.91394 23326 6d6ba67789e76bc60a770c5d478883b5 ""
-  "chapitres/oscillations.tex" 1738272395.37196 20860 9aa136fb0b165bbbe6aab8f4d1e0f9d1 ""
+  "chapitres/oscillations.tex" 1738274007.45307 21055 c09d85dd506dd29fc2a636fc49917779 ""
   "images/ch1/region_integration.jpeg" 1737743657.31265 56084 adfabbc5bf0be64546395de913bc8c92 ""
   "images/ch2/embranchements.png" 1737744200.2847 92135 71ea9475da1e06202a0f31876e45c946 ""
-  "main.aux" 1738272396.84196 3109 b66d6808071c53b1d04fc7b5405de01c "pdflatex"
-  "main.bbl" 1738271647.57691 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
-  "main.out" 1738272396.84296 3341 4e034662befe95ba46afa86772a944f4 "pdflatex"
+  "main.aux" 1738274008.85907 2931 104e1d3264e2bbc23ea82fe48407e5db "pdflatex"
+  "main.bbl" 1738273996.94907 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
+  "main.out" 1738274008.86007 3170 05ccc4288496c656767b090c6b931b02 "pdflatex"
   "main.tex" 1738008989.97511 2302 dfec5a78a925782ce492de925203285f ""
-  "main.toc" 1738272396.84396 1700 58e228373b10920722b1498a03877dbe "pdflatex"
+  "main.toc" 1738274008.86007 1563 0041cc663bb0318378e780b5ed56daeb "pdflatex"
   (generated)
   "main.aux"
   "main.log"

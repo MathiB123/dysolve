@@ -1,23 +1,19 @@
 \newpage
 \section{Application à un drive oscillant}
-Un drive est une onde (un pulse) qu'on envoie sur un transmon (qubit) afin de manipuler son état. Ici, le drive oscille et cela occasionne des changements de niveaux d'énergie. Le qubit évolue donc avec un hamiltonien dépendant du temps.
-
-\subsection{Dérivation}
-
-\subsubsection{Préliminaires}
-On considère un hamiltonien dépendant du temps de la forme 
+\subsection{Préliminaires}
+Un drive est une onde qu'on envoie sur un transmon afin de manipuler son état. Ici, le drive oscille et son application occasionne des changements de niveaux d'énergie pour le transmon. Le qubit évolue donc avec un hamiltonien dépendant du temps. Dans un tel contexte, l'hamiltonien correspond à  
 
 \begin{equation}
     H(t) = H_0 + V(t)
 \end{equation}
 
-où $H_0 = \sum_{k} \lambda_k \ket{k}\bra{k}$ dans sa base d'états propres et $V(t) = X\cos(\omega t)$ pour un certain opérateur $X$. En décomposant le cosinus en exponentielles complexes, 
+où, dans sa base d'états propres, $H_0 = \sum_{k} \lambda_k \ket{k}\bra{k}$ correspond aux énergies du transmon quand on le laisse tranquille et $V(t) = X\cos(\omega t)$ pour un certain opérateur $X$ correspond à la modification due au drive. En décomposant le cosinus en exponentielles complexes, 
 
 \begin{equation*}
     H(t) = H_0 + X\left(\frac{e^{i \omega t} + e^{-i\omega t}}{2}\right)
 \end{equation*}
 
-Pour une variation infime de temps et en utilisant la définition de (2.1), on trouve (et ce n'est pas très beau)
+On s'attarde à l'opérateur d'évolution dans cette situation. Pour une variation infime de temps et en utilisant (2.1), on trouve (et ce n'est pas très beau)
 
 \begin{equation*}
     U(t+\delta t, t) = \sum_{n=0}^{\infty} (-i)^n \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2}H(t_n)...H(t_1)dt_1 ... dt_n
@@ -33,7 +29,7 @@ Pour une variation infime de temps et en utilisant la définition de (2.1), on t
     = \sum_{n=0}^{\infty} \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2} (-i)^n H_0...H_0 dt_1...dt_n + ... + \sum_{n=0}^{\infty} \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2}(-i)^n V(t_n)...V(t_1) dt_1...dt_n
 \end{equation}
 
-On peut voir que la distribution des termes correspond à l'ensemble des combinaisons de $n$ opérateurs où on choisit soit $H_0$ ou $V(t)$ pour chacun d'eux. Il y a donc au total $2^n$ termes chacun $n$ opérateurs pouvant alterner entre des suites de $H_0$ ou de $V(t)$ de différentes longueurs. Graphiquement, on peut représenter la génération des combinaisons par la figure 2. On s'apprête maintenant à réécrire (2.2) différemment et la dérivation pour y arriver peut facilement porter à confusion. On essaie d'expliquer le plus possible chaque étape.
+On peut voir que la distribution des termes correspond à l'ensemble des combinaisons de $n$ opérateurs où on choisit soit $H_0$ ou $V(t)$ pour chacun d'eux. Il y a donc au total $2^n$ termes, chacun de $n$ opérateurs et pouvant alterner entre des suites de $H_0$ ou de $V(t)$ de différentes longueurs. Graphiquement, on peut représenter la génération des combinaisons par la figure 2 où chacune d'entre elles correspond à une branche différente de l'arbre.
 
 \begin{figure}[H]
     \centering
@@ -41,7 +37,9 @@ On peut voir que la distribution des termes correspond à l'ensemble des combina
     \caption{Arbre permettant de générer l'ensemble des combinaisons}
 \end{figure}
 
-\subsubsection{Dérivation (partie 1)}
+On s'apprête maintenant à réécrire (2.2) différemment et la dérivation pour y arriver peut facilement porter à confusion. On essaie d'expliquer le plus possible chaque étape.
+
+\subsection{Dérivation (partie 1)}
 On considère maintenant $n$ comme étant le nombre de $V(t)$ présents dans chaque terme de (2.2) et on omet temporairement les indices $V(t_j)$ pour éviter de se mélanger avec l'ancienne écriture. Il ne s'agit plus du même $n$ que dans (2.2) et il faut alors un nouveau moyen d'écrire tout cela avec ce changement de variables. Pour se faire, on introduit les $m_i$ qui indiquent combien d'applications de $H_0$ il y a avant une application de $V(t)$. Par exemple,
 
 \begin{equation*}
@@ -71,7 +69,7 @@ dont on obtient sa longueur $M$ (le nombre total d'opérateurs) grâce à
     M = \left(\sum_{i=0}^{n}m_i\right) + n
 \end{equation}
 
-\subsubsection{Dérivation (partie 2)}
+\subsection{Dérivation (partie 2)}
 La prochaine étape est maintenant de retrouver les indices dans les $V(t)$ avec notre nouvelle notation. On sait déjà qu'il y aura $n$ opérateurs $V(t)$, mais on doit pouvoir retrouver leur positionnement dans la chaîne d'opérateurs. On peut simplement compter combien il y a de $H_0$ et d'autres $V(t)$ avant celui qui nous intéresse. Par exemple, pour $n=2$, on pourrait avoir la chaîne
 
 \begin{equation*}
@@ -92,7 +90,7 @@ Pour reprendre l'exemple, on aurait
 
 ce qui est exactement comme dans (2.2).
 
-\subsubsection{Dérivation (partie 3)}
+\subsection{Dérivation (partie 3)}
 Ensuite, on étend les $V(t_{l(p)})$ selon leur définition qu'on rappelle ici.
 
 \begin{equation*}
@@ -126,7 +124,7 @@ Ainsi, (2.3) peut être réécrit de la manière suivante.
     \frac{1}{2^n}\sum_{\left\{\boldsymbol{\omega}_n\right\}}\left(\prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p]t_{l(p)}} (H_0)^{m_n}X ... X(H_0)^{m_0}\right)
 \end{equation}
 
-\subsubsection{Dérivation (partie 4)}
+\subsection{Dérivation (partie 4)}
 Il est maintenant temps de remettre les précédentes parties dans le contexte de (2.2). D'abord, on se retrouve avec
 
 \begin{equation*}
@@ -148,7 +146,7 @@ Puis, on doit sommer la précédente équation pour tous les nombres $n$ de $V(t
     U(t+\delta t, t) = \sum_{n=0}^{\infty}\sum_{\left\{\boldsymbol{\omega}_n\right\}}\frac{1}{2^n}\sum_{\boldsymbol{m} \in \mathbb{Z}^{n+1}_+}\left(\int_{t}^{t + \delta t}\int_{t}^{t_M}...\int_{t}^{t_2} (-iH_0)^{m_n}X...X(-iH_0)^{m_0} \cdot (-i)^n \prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p]t_{l(p)}} dt_1 ... dt_M\right)
 \end{equation*}
 
-\subsubsection{Dérivation (dernière partie)}
+\subsection{Dérivation (dernière partie)}
 Finalement, on procède simplement à un changement de variables $t_i^{'} = t_i - t$. Ainsi, 
 
 \begin{equation*}
