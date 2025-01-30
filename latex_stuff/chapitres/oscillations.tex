@@ -264,35 +264,59 @@ On a déjà rencontré auparavant à l'ordre 0 ce qui se trouve à droite de la 
 \begin{equation*}
     = \frac{-i}{2}\sum_{m_1 = 0}^{\infty}(-iH_0)^{m_1}X\int_{0}^{\delta t}dt^{'}_M ... \int_{0}^{t^{'}_{M-m_1+1}}e^{i\boldsymbol{\omega}_1[1]t^{'}_{M-m_1}} dt_{M-m_1}^{'}\sum_{k^\text{'}}e^{-i\lambda_{k^\text{'}}t^{'}_{M-m_1}}\ket{k^\text{'}}\bra{k^\text{'}}
 \end{equation*}
+\begin{equation}
+    = \frac{-i}{2}\sum_{k^\text{'}}\sum_{m_1 = 0}^{\infty}(-iH_0)^{m_1}X\int_{0}^{\delta t}dt^{'}_M ... \int_{0}^{t^{'}_{M-m_1+1}}e^{i(-\lambda_{k^{'}}+\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'}\ket{k^\text{'}}\bra{k^\text{'}}
+\end{equation}
+
+On souhaite simplifier davantage en retrouvant encore l'équation d'ordre 0 pour y faire la même manipulation. Cependant, l'ordre des intégrales imbriquées nous ne permet de faire cela directement. Pour y remédier, on se rappelle des démarches pour $J_2$ où on pouvait l'écrire de deux manières différentes, soit en intégrant "horizontalement" ou "verticalement" (voir figure 1 (A) et (B)). Ainsi, on pouvait inverser l'ordre d'intégration avec de nouvelles bornes appropriées. Cette façon de faire se généralise pour $J_n$ mais tient aussi lorsqu'on intègre des fonctions au lieu de matrices. Pour les intégrales imbriquées de (2.11), on trouverait pour un tel changement
+
 \begin{equation*}
-    = \frac{-i}{2}\sum_{k^\text{'}}\sum_{m_1 = 0}^{\infty}(-iH_0)^{m_1}X\int_{0}^{\delta t}dt^{'}_M ... \int_{0}^{t^{'}_{M-m_1+1}}e^{-i(\lambda_{k^{'}}-\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'}\ket{k^\text{'}}\bra{k^\text{'}}
+    S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{-i}{2}\sum_{k^\text{'}}\sum_{m_1 = 0}^{\infty}(-iH_0)^{m_1}X \int_{0}^{\delta t}e^{i(-\lambda_{k^{'}}+\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'} \int_{t^{'}_{M-m_1}}^{\delta t} dt^{'}_{M-m_1+1} ... \int_{t^{'}_{M-1}}^{\delta t} dt^{'}_{M}  \ket{k^\text{'}}\bra{k^\text{'}}
 \end{equation*}
 
-En évaluant les intégrales avant celle avec l'exponentielle, on voit qu'on peut essentiellement échanger l'ordre des intégrales pour réécrire (*trouver une meilleure formulation...)
+À droite de l'unique intégrale avec l'exponentielle, il y a exactement $m_1$ intégrales. Alors, 
 
 \begin{equation*}
-    S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{-i}{2}\sum_{k^\text{'}}\sum_{m_1 = 0}^{\infty}(-iH_0)^{m_1}\int_{0}^{\delta t}e^{-i(\lambda_{k^{'}}-\boldsymbol{\omega}_1[1])t^{'}_{M}}dt^{'}_M \int_{0}^{t^{'}_M}dt^{'}_{M-1}... \int_{0}^{t^{'}_{M-m_1+1}} dt_{M-m_1}^{'}X\ket{k^\text{'}}\bra{k^\text{'}}
+    S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{-i}{2}\sum_{k^\text{'}} \int_{0}^{\delta t}e^{i(-\lambda_{k^{'}}+\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'} \sum_{m_1 = 0}^{\infty}\int_{t^{'}_{M-m_1}}^{\delta t} dt^{'}_{M-m_1+1} ... \int_{t^{'}_{M-1}}^{\delta t} dt^{'}_{M}  (-iH_0)^{m_1}X\ket{k^\text{'}}\bra{k^\text{'}}
+\end{equation*}
+
+Encore une fois, par les $J_n$,
+
+\begin{equation*}
+    S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{-i}{2}\sum_{k^\text{'}} \int_{0}^{\delta t}e^{i(-\lambda_{k^{'}}+\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'} \sum_{m_1 = 0}^{\infty}\frac{1}{m_1!}\left(\int_{t^{'}_{M-m_1}}^{\delta t} dt^{'}_{M-m_1+1}\right)^{m_1}(-iH_0)^{m_1}X\ket{k^\text{'}}\bra{k^\text{'}}
 \end{equation*}
 \begin{equation*}
-    = \frac{-i}{2}\sum_{k^\text{'}}\int_{0}^{\delta t}e^{-i(\lambda_{k^{'}}-\boldsymbol{\omega}_1[1])t^{'}_{M}}dt^{'}_M\sum_{m_1 = 0}^{\infty}\int_{0}^{t^{'}_M}dt^{'}_{M-1}... \int_{0}^{t^{'}_{M-m_1+1}} dt_{M-m_1}^{'}(-iH_0)^{m_1}X\ket{k^\text{'}}\bra{k^\text{'}}
+    = \frac{-i}{2}\sum_{k^\text{'}} \int_{0}^{\delta t}e^{i(-\lambda_{k^{'}}+\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'} \sum_{m_1 = 0}^{\infty}\frac{\left(-iH_0(\delta t - t^{'}_{M-m_1})\right)^{m_1}}{m_1!}X\ket{k^\text{'}}\bra{k^\text{'}}
 \end{equation*}
 \begin{equation*}
-    = \frac{-i}{2}\sum_{k^\text{'}}\int_{0}^{\delta t}e^{-i(\lambda_{k^{'}}-\boldsymbol{\omega}_1[1])t^{'}_{M}}dt^{'}_M S^{(0)}(\boldsymbol{\omega}_0, t^\text{'}_M) X\ket{k^\text{'}}\bra{k^\text{'}} 
+    = \frac{-i}{2}\sum_{k^\text{'}} \int_{0}^{\delta t}e^{i(-\lambda_{k^{'}}+\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'} e^{-iH_0(\delta t - t^{'}_{M-m_1})} X\ket{k^\text{'}}\bra{k^\text{'}}
 \end{equation*}
 \begin{equation*}
-    = \frac{-i}{2}\sum_{k^\text{'}}\int_{0}^{\delta t}e^{-i(\lambda_{k^{'}}-\boldsymbol{\omega}_1[1])t^{'}_{M}}dt^{'}_M \sum_{k}e^{-i\lambda_k t^\text{'}_M}\ket{k}\bra{k} X\ket{k^\text{'}}\bra{k^\text{'}}
+    = \frac{-i}{2}\sum_{k^\text{'}} \int_{0}^{\delta t}e^{i(-\lambda_{k^{'}}+\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'} \sum_{k} e^{-i\lambda_k(\delta t -  t^{'}_{M-m_1})}\ket{k}\bra{k}X\ket{k^\text{'}}\bra{k^\text{'}}
 \end{equation*}
 \begin{equation*}
-    = \frac{-i}{2}\sum_{k,k^\text{'}}\int_{0}^{\delta t}e^{-i(\lambda_k + \lambda_{k^{'}}-\boldsymbol{\omega}_1[1])t^{'}_{M}}dt^{'}_M \bra{k} X\ket{k^\text{'}} \ket{k}\bra{k^\text{'}}
+    = \frac{-i}{2}\sum_{k, k^\text{'}}\int_{0}^{\delta t}e^{i(\lambda_k -\lambda_{k^{'}}+\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'} e^{-i\lambda_k\delta t} \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
 \end{equation*}
+\begin{equation*}
+    = \frac{-i}{2}\sum_{k, k^\text{'}}\frac{1}{i(\lambda_k - \lambda_{k^\text{'}} + \boldsymbol{\omega}_1[1])}\left(e^{i\delta t(\lambda_k - \lambda_{k^\text{'}} + \boldsymbol{\omega}_1[1])} - 1\right)e^{-i\lambda_k\delta t} \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
+\end{equation*}
+\begin{equation*}
+    = \frac{-i}{2}\sum_{k, k^\text{'}}\frac{1}{-i(\lambda_k - (\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1]))}\left(e^{-i\lambda_k\delta t} - e^{-i\delta t(\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])} \right) \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
+\end{equation*}
+\begin{equation*}
+    = \frac{-i\delta t}{2}\sum_{k, k^\text{'}}\frac{i}{\lambda_k\delta t - (\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])\delta t}\left(e^{-i\lambda_k\delta t} - e^{-i\delta t(\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])} \right) \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
+\end{equation*}
+\begin{equation}
+    = \frac{-i\delta t}{2}\sum_{k, k^\text{'}}f(\lambda_k\delta t, (\lambda_{k^\text{'}}-\boldsymbol{\omega}_1[1])\delta t)\bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
+\end{equation}
 
-FAIRE L'INTÉGRATION
+où on pose
 
+\begin{equation}
+    f(\lambda_k\delta t, (\lambda_{k^\text{'}}-\boldsymbol{\omega}_1[1])\delta t) = \frac{i}{\lambda_k\delta t - (\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])\delta t}\left(e^{-i\lambda_k\delta t} - e^{-i\delta t(\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])} \right) 
+\end{equation}
 
-
-
-
-
+Finalement, le calcul de $U^{(1)}(t + \delta t, t)$ se fait par (2.9).
 
 
 
