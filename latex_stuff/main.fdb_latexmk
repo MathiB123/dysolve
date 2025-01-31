@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1738331250.09445 "main.aux" "main.bbl" "main" 1738333526.56766 0
+["bibtex main"] 1738331250.09445 "main.aux" "main.bbl" "main" 1738334820.22627 0
   "./refs.bib" 1737745282.37479 1451 9e8e7a9ee647f93e286e0be6b20b95c4 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1738333526.37415 2931 104e1d3264e2bbc23ea82fe48407e5db "pdflatex"
+  "main.aux" 1738334820.02512 2931 104e1d3264e2bbc23ea82fe48407e5db "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1738333525.32988 "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" "main.pdf" "main" 1738333526.56787 0
+["pdflatex"] 1738334818.97231 "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" "main.pdf" "main" 1738334820.22655 0
   "/etc/texmf/web2c/texmf.cnf" 1736284741.41123 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" 1738330444.23822 2231 34e963b0f9cf5112ed6b54162f7b4b1e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -253,14 +253,14 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1736523425.67346 165051 331a4b0cc8c79ccd6b2fbd918be026fc ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736523451 6837863 8e982e5ba70809c29420bac6757cc55b ""
   "chapitres/eq_maitre.tex" 1738271963.91394 23326 6d6ba67789e76bc60a770c5d478883b5 ""
-  "chapitres/oscillations.tex" 1738333525.00915 21107 86022735133ee06e69cd71f231c4c2ce ""
+  "chapitres/oscillations.tex" 1738334818.61911 21794 d97dcd88c6738ef61f6d9a5086a1e131 ""
   "images/ch1/region_integration.jpeg" 1737743657.31265 56084 adfabbc5bf0be64546395de913bc8c92 ""
   "images/ch2/embranchements.png" 1737744200.2847 92135 71ea9475da1e06202a0f31876e45c946 ""
-  "main.aux" 1738333526.37415 2931 104e1d3264e2bbc23ea82fe48407e5db "pdflatex"
+  "main.aux" 1738334820.02512 2931 104e1d3264e2bbc23ea82fe48407e5db "pdflatex"
   "main.bbl" 1738331250.1202 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
-  "main.out" 1738333526.37515 3170 05ccc4288496c656767b090c6b931b02 "pdflatex"
+  "main.out" 1738334820.02711 3170 05ccc4288496c656767b090c6b931b02 "pdflatex"
   "main.tex" 1738330444.23822 2231 34e963b0f9cf5112ed6b54162f7b4b1e ""
-  "main.toc" 1738333526.37515 1563 0041cc663bb0318378e780b5ed56daeb "pdflatex"
+  "main.toc" 1738334820.02711 1563 0041cc663bb0318378e780b5ed56daeb "pdflatex"
   (generated)
   "main.aux"
   "main.log"
