@@ -189,7 +189,7 @@ de sorte que
     U(t+\delta t, t) = \sum_{n=0}^{\infty}U^{(n)}(t+\delta t, t)
 \end{equation}
 
-\subsection{Ordre 0}
+\subsection{Calcul de l'ordre 0}
 On calcule explicitement $U^{(0)}(t+\delta t, t)$, soit la branche la plus à gauche dans la figure 2 où la chaîne d'opérateurs ne contient que des $H_0$. Ici, $\boldsymbol{m} = [m_0]$ et $\left\{\boldsymbol{\omega}_0\right\}$ est vide. Dès lors,
 
 \begin{equation*}
@@ -217,8 +217,7 @@ Cela a du sens, car on a seulement des opérateurs indépendants du temps. Donc,
     S^{(0)}(\boldsymbol{\omega}_0, \delta t) = \sum_{m_0 = 0}^{\infty}\frac{(-iH_0\delta t)^{m_0}}{m_0!} = \sum_{m_0 = 0}^{\infty}\frac{(-i\sum_{k}\lambda_k \ket{k}\bra{k}\delta t)^{m_0}}{m_0!} = \sum_{k}\sum_{m_0 = 0}^{\infty}\frac{(-i\lambda_k\delta t)^{m_0}}{m_0!}\ket{k}\bra{k} = \sum_{k}e^{-i\lambda_k\delta t}\ket{k}\bra{k}
 \end{equation*}
 
-
-\subsection{Ordre 1}
+\subsection{Calcul de l'ordre 1}
 On s'attarde ici aux branches avec un seul $V(t)$ à quelque part dans la séquence d'opérateurs, ce qu'on calcule par $ U^{(1)}(t+\delta t, t)$. On sait que $\boldsymbol{m} = [m_1, m_0]$ et que $\left\{\boldsymbol{\omega}_1\right\} = \left\{[+\omega], [-\omega]\right\}$. Ainsi, 
 
 \begin{equation*}
@@ -315,6 +314,41 @@ où on pose
 Finalement, le calcul de $U^{(1)}(t + \delta t, t)$ se complète avec (2.9).
 
 On remarque qu'autant pour $S^{(0)}(\boldsymbol{\omega}_0, \delta t)$ que $S^{(1)}(\boldsymbol{\omega}_1, \delta t)$, ils ne dépendent pas du temps actuel $t$ dans l'évolution, mais seulement de l'écart de temps $\delta t$. D'ailleurs, cette observation sera aussi vrai pour les ordres supérieurs. Ainsi, si l'évolution totale dure un temps $T = P\delta t$ pour un entier $P$ (donc qu'on découpe l'évolution en $P$ parties égales), alors on peut tous les évaluer simultanément. Grâce à cela, on pourrait calculer un opérateur d'évolution général $U((p+1)\delta t, p\delta t)$ puis simplement y substituer le $p$ approprié pour reconstruire l'entièreté de l'évolution.
+
+\subsection{Calcul de l'ordre $n$}
+\subsubsection{Notation}
+Avant de donner une formule générale pour l'ordre $n$, on doit d'abord introduire quelques notations. Premièrement, il n'est pratique d'utiliser des apostrophes pour spécifier les $n+1$ sommes sur les états propres de $H_0$, car on aura de plus en plus de sommes et la notation sera horrible. Pour se faire, on introduit $\boldsymbol{k}_n = (k^{(0)}, ..., k^{(n)})$ qui sera un ensemble d'indices pour spécifier ces $n+1$ sommes sur les états propres.
+
+Deuxièmement, on spécifiera les énergies propres de chacune des sommes par $\boldsymbol{\lambda}_n(\boldsymbol{k}_n) = (\lambda_{k^{(0)}}, ..., \lambda_{k^{(n)}})$ où, pour préciser, $H_0\ket{k^{(j)}} = \lambda_{k^{(j)}}\ket{k^{(j)}}$.
+
+Troisièmement, on pose un "vecteur cumulatif" qui facilitera la généralisation.
+
+\begin{equation*}
+    \boldsymbol{c}(\boldsymbol{\omega_n}) = \left(\sum_{p=0}^{n-1}\boldsymbol{\omega}_n[n-p], \sum_{p=0}^{n-2}\boldsymbol{\omega}_n[n-p], ..., \boldsymbol{\omega}_n[n], 0 \right)
+\end{equation*}
+
+Finalement, lorsqu'on verra $\sum_{\boldsymbol{k}_n}$, on voudra dire $\sum_{k^{(n)}}\sum_{k^{(n-1)}}...\sum_{k^{(0)}}$.
+
+\subsubsection{Formule pour l'ordre $n$}
+Par récurrence et en s'inspirant des démarches pour l'ordre 0 et 1, on pourrait montrer que l'ordre $n$ s'écrit
+
+\begin{equation*}
+    S^{(n)}(\boldsymbol{\omega}_n, \delta t) = \left(\frac{-i \delta t}{2}\right)^n \sum_{\boldsymbol{k}_n} f(\boldsymbol{\lambda}_n(\boldsymbol{k}_n)\delta t - \boldsymbol{c}(\boldsymbol{\omega}_n)\delta t) \bra{k^{(n)}}X\ket{k^{(n-1)}}... \bra{k^{(1)}}X\ket{k^{(0)}} \ket{k^{(n)}}\bra{k^{(0)}}
+\end{equation*}
+
+Faisons sens de cela. Tout d'abord, $(-i/2)^n$ provient simplement de (2.7) et (2.8) qu'on garde en facteur tout au long des calculs. Par la suite, les différents éléments de matrice $\bra{k^{(j+1)}}X\ket{k^{(j)}}$ de $X$ avec le ket-bra $\ket{k^{(n)}}\bra{k^{(0)}}$ viennent des différentes exponentielles complexes contenant $H_0$ qu'on réécrit de cette manière sachant que $H_0$ est diagonal. C'est d'ailleurs pour cela qu'on doit faire $\sum_{\boldsymbol{k}_n}$. Quant à $(\delta t)^n$ et $f(\boldsymbol{\lambda}_n(\boldsymbol{k}_n)\delta t - \boldsymbol{c}(\boldsymbol{\omega}_n)\delta t)$, ils arrivent de la généralisation (qu'on ne détaillera pas, voir plutôt le paper) de (2.13). En fait, il existe une relation de récursion pour $f$ où pour un vecteur $\boldsymbol{a}$ de taille $n$
+
+\begin{equation*}
+    f(\boldsymbol{a}) = i\frac{f(\boldsymbol{g}(\boldsymbol{a})) - f(\boldsymbol{g}^2(\boldsymbol{a}) \cup \boldsymbol{a}[n])}{\boldsymbol{a}[n-1] - \boldsymbol{a}[n]}
+\end{equation*}
+
+*parler de $g$, $g^2$ et $\cup$. Limite quand dégénéré.
+
+
+
+
+
+
 
 
 
