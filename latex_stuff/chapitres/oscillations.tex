@@ -40,7 +40,7 @@ On peut voir que la distribution des termes correspond à l'ensemble des combina
 On s'apprête maintenant à réécrire (2.2) différemment et la dérivation pour y arriver peut facilement porter à confusion. On essaie d'expliquer le plus possible chaque étape.
 
 \subsection{Dérivation (partie 1)}
-On considère maintenant $n$ comme étant le nombre de $V(t)$ présents dans chaque terme de (2.2) et on omet temporairement les indices $V(t_j)$ pour éviter de se mélanger avec l'ancienne écriture. Il ne s'agit plus du même $n$ que dans (2.2) et il faut alors un nouveau moyen d'écrire tout cela avec ce changement de variables. Pour se faire, on introduit les $m_i$ qui indiquent combien d'applications de $H_0$ il y a avant une application de $V(t)$. Par exemple,
+On considère maintenant $n$ comme étant le nombre de $V(t)$ présents dans chaque terme de (2.2) et on omet temporairement les indices $V(t_j)$ pour éviter de se mélanger avec l'ancienne écriture. Il ne s'agit plus du même $n$ que dans (2.2) et il faut alors un nouveau moyen d'écrire tout cela avec ce changement de variables. Pour se faire, on introduit les $m_i$ qui indiquent combien d'applications de $H_0$ il y a avant une application d'un $V(t)$. Par exemple,
 
 \begin{equation*}
     H_0V(t)H_0H_0 = (H_0)^1V(t)(H_0)^2 = (H_0)^{m_1}V(t)(H_0)^{m_0} \implies m_0 = 2, m_1 = 1
@@ -76,19 +76,19 @@ La prochaine étape est maintenant de retrouver les indices dans les $V(t)$ avec
     H_0V(t)H_0V(t)H_0 \implies \boldsymbol{m} = \left[1, 1, 1\right]
 \end{equation*}
 
-Le premier $V(t)$ s'applique nécessairement après $m_0 = 1$ opérateur $H_0$. Le deuxième s'applique nécessairement après $m_0 = 1$ opérateur $H_0$, un $V(t)$ puis $m_1 = 1$ opérateur $H_0$. Si $p \in \left[1..n\right]$ est une variable qui passe au travers des $n$ opérateurs $V(t)$, alors il est facile de voir l'indexage $V(t_{l(p)})$ où
+Le premier $V(t)$ s'applique nécessairement après $m_0 = 1$ opérateur $H_0$. Le deuxième s'applique nécessairement après $m_0 = 1$ opérateur $H_0$, un $V(t)$ puis $m_1 = 1$ opérateur $H_0$. Si $p \in \left[1..n\right]$ est une variable qui passe au travers des $n$ opérateurs $V(t)$, alors il est facile d'avoir l'indexage $V(t_{l(p)})$ où
 
 \begin{equation}
     l(p) = \left(\sum_{j=0}^{p-1}m_j\right) + p
 \end{equation}
 
-Pour reprendre l'exemple, on aurait 
+Pour reprendre l'exemple, 
 
 \begin{equation*}
     H_0V(t_{l(2)})H_0V(t_{l(1)})H_0 = H_0V(t_{m_1 + m_0 + 2})H_0V(t_{m_0 + 1})H_0 = H_0V(t_4)H_0V(t_2)H_0
 \end{equation*}
 
-ce qui est exactement comme dans (2.2).
+comme on aurait dans (2.2).
 
 \subsection{Dérivation (partie 3)}
 Ensuite, on étend les $V(t_{l(p)})$ selon leur définition qu'on rappelle ici.
@@ -106,7 +106,7 @@ Toujours avec le même exemple,
     = \frac{1}{2^2}\left(e^{i\omega t_2}e^{i\omega t_4} + e^{i\omega t_2}e^{-i\omega t_4} + e^{-i\omega t_2}e^{i\omega t_4} + e^{-i\omega t_2}e^{-i\omega t_4}\right)H_0XH_0XH_0
 \end{equation*}
 
-On introduit maintenant le vecteur à $n$ dimensions $\boldsymbol{\omega}_n$ dont chacun de ses éléments peut soit être $+\omega$ ou $-\omega$. On peut aller chercher l'élément $i$ par $\boldsymbol{\omega}_n[i]$. Pour un $n$ donné, on voit qu'il en existe $2^n$ différents qu'on rassemble dans $\left\{\boldsymbol{\omega}_n\right\}$. Notamment, 
+On introduit maintenant le vecteur à $n$ dimensions $\boldsymbol{\omega}_n$ dont chacun de ses éléments peut soit être $+\omega$ ou $-\omega$. On peut aller chercher l'élément $i$ par $\boldsymbol{\omega}_n[i]$. Pour un $n$ donné, on voit qu'il en existe $2^n$ différents qu'on rassemble dans $\left\{\boldsymbol{\omega}_n\right\}$. Par exemple, 
 
 \begin{equation*}
     \left\{\boldsymbol{\omega}_2\right\} = \left\{\left[+\omega, +\omega\right], \left[+\omega, -\omega\right], \left[-\omega, +\omega\right], \left[-\omega, -\omega\right]\right\}    
@@ -189,10 +189,8 @@ de sorte que
     U(t+\delta t, t) = \sum_{n=0}^{\infty}U^{(n)}(t+\delta t, t)
 \end{equation}
 
-La transformation est assez exotique comme on vient de le voir, mais on verra qu'elle permettra un calcul numérique plus efficace.
-
 \subsection{Ordre 0}
-On calcule explicitement $U^{(0)}(t+\delta t, t)$, soit la branche la plus à gauche dans la figure 2 où la chaîne d'opérateurs ne contient que des $H_0$. Ici, $\boldsymbol{m} = [m_0]$ et $\left\{\boldsymbol{\omega}_0\right\}$ est vide.
+On calcule explicitement $U^{(0)}(t+\delta t, t)$, soit la branche la plus à gauche dans la figure 2 où la chaîne d'opérateurs ne contient que des $H_0$. Ici, $\boldsymbol{m} = [m_0]$ et $\left\{\boldsymbol{\omega}_0\right\}$ est vide. Dès lors,
 
 \begin{equation*}
     S^{(0)}_{\boldsymbol{m}}(\boldsymbol{\omega}_0, \delta t) = \int_{0}^{\delta t}\int_{0}^{t_{m_0}^{'}}...\int_{0}^{t_2^{'}} (-iH_0)^{m_0}dt_1^{'}...dt_{m_0}^{'} = \frac{(-iH_0)^{m_0}}{m_0!}\int_{0}^{\delta t}...\int_{0}^{\delta t}dt_1^{'}...dt_{m_0}^{'} = \frac{(-iH_0\int_{0}^{\delta t}dt^{'})^{m_0}}{m_0!}
@@ -221,7 +219,7 @@ Cela a du sens, car on a seulement des opérateurs indépendants du temps. Donc,
 
 
 \subsection{Ordre 1}
-On s'attarde ici aux branches avec un seul $V(t)$ à quelque part dans la séquence d'opérateurs qu'on calcule par $ U^{(1)}(t+\delta t, t)$. On sait que $\boldsymbol{m} = [m_1, m_0]$ et que $\left\{\boldsymbol{\omega}_1\right\} = \left\{[+\omega], [-\omega]\right\}$. Ainsi, 
+On s'attarde ici aux branches avec un seul $V(t)$ à quelque part dans la séquence d'opérateurs, ce qu'on calcule par $ U^{(1)}(t+\delta t, t)$. On sait que $\boldsymbol{m} = [m_1, m_0]$ et que $\left\{\boldsymbol{\omega}_1\right\} = \left\{[+\omega], [-\omega]\right\}$. Ainsi, 
 
 \begin{equation*}
     S^{(1)}_{\boldsymbol{m}}(\boldsymbol{\omega}_1, \delta t) = -i\int_{0}^{\delta t}\int_{0}^{t_M^{'}}... \int_{0}^{t_2^{'}}(-iH_0)^{m_1}X(-iH_0)^{m_0} e^{i\boldsymbol{\omega}_1[1]t^{'}_{l(1)}}dt_1^{'} ... dt_M^{'}
@@ -254,7 +252,7 @@ De là,
     = \frac{-i}{2}\sum_{m_1 = 0}^{\infty}(-iH_0)^{m_1}X\int_{0}^{\delta t}dt^{'}_M ... \int_{0}^{t^{'}_{M-m_1+1}}e^{i\boldsymbol{\omega}_1[1]t^{'}_{M-m_1}} dt_{M-m_1}^{'}\sum_{m_0 = 0}^{\infty}\int_{0}^{t^{'}_{M-m_1}}... \int_{0}^{t_2^{'}}(-iH_0)^{m_0} dt_1^{'} ... dt_{M - m_1 - 1}^{'}
 \end{equation*}
 
-On a déjà rencontré auparavant à l'ordre 0 ce qui se trouve à droite de la somme infinie sur $m_0$. Il y a en effet $m_0$ intégrales à la droite de cette somme. Alors, on écrit
+On a déjà rencontré à l'ordre 0 ce qui se trouve à droite de la somme infinie sur $m_0$. Il y a en effet $m_0$ intégrales à la droite de cette somme. Alors, on écrit
 
 \begin{equation*}
     S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{-i}{2}\sum_{m_1 = 0}^{\infty}(-iH_0)^{m_1}X\int_{0}^{\delta t}dt^{'}_M ... \int_{0}^{t^{'}_{M-m_1+1}}e^{i\boldsymbol{\omega}_1[1]t^{'}_{M-m_1}} dt_{M-m_1}^{'}S^{(0)}(\boldsymbol{\omega}_0, t^{'}_{M-m_1})
@@ -266,7 +264,7 @@ On a déjà rencontré auparavant à l'ordre 0 ce qui se trouve à droite de la 
     = \frac{-i}{2}\sum_{k^\text{'}}\sum_{m_1 = 0}^{\infty}(-iH_0)^{m_1}X\int_{0}^{\delta t}dt^{'}_M ... \int_{0}^{t^{'}_{M-m_1+1}}e^{i(-\lambda_{k^{'}}+\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'}\ket{k^\text{'}}\bra{k^\text{'}}
 \end{equation}
 
-On souhaite simplifier davantage en retrouvant encore l'équation d'ordre 0 pour y faire la même manipulation. Cependant, l'ordre des intégrales imbriquées nous ne permet de faire cela directement. Pour y remédier, on se rappelle des démarches pour $J_2$ où on pouvait l'écrire de deux manières différentes, soit en intégrant "horizontalement" ou "verticalement" (voir figure 1 (A) et (B)). Ainsi, on pouvait inverser l'ordre d'intégration avec de nouvelles bornes appropriées. Cette façon de faire se généralise pour $J_n$ mais tient aussi lorsqu'on intègre des fonctions au lieu de matrices. Pour les intégrales imbriquées de (2.11), on trouverait pour un tel changement
+On souhaite simplifier davantage en retrouvant encore l'équation d'ordre 0 pour y faire la même manipulation avec les $H_0$ restants. Cependant, l'ordre des intégrales imbriquées nous ne permet de faire cela directement. Pour y remédier, on se rappelle des démarches pour $J_2$ où on pouvait l'écrire de deux manières différentes, soit en intégrant "horizontalement" ou "verticalement" (voir figure 1 (A) et (B)). Ainsi, on pouvait inverser l'ordre d'intégration avec de nouvelles bornes appropriées. Cette façon de faire se généralise pour $J_n$ mais tient aussi lorsqu'on intègre des fonctions au lieu de matrices. Pour les intégrales imbriquées de (2.11), on trouverait pour un tel changement
 
 \begin{equation*}
     S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{-i}{2}\sum_{k^\text{'}}\sum_{m_1 = 0}^{\infty}(-iH_0)^{m_1}X \int_{0}^{\delta t}e^{i(-\lambda_{k^{'}}+\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'} \int_{t^{'}_{M-m_1}}^{\delta t} dt^{'}_{M-m_1+1} ... \int_{t^{'}_{M-1}}^{\delta t} dt^{'}_{M}  \ket{k^\text{'}}\bra{k^\text{'}}
@@ -278,7 +276,7 @@ On souhaite simplifier davantage en retrouvant encore l'équation d'ordre 0 pour
     S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{-i}{2}\sum_{k^\text{'}} \int_{0}^{\delta t}e^{i(-\lambda_{k^{'}}+\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'} \sum_{m_1 = 0}^{\infty}\int_{t^{'}_{M-m_1}}^{\delta t} dt^{'}_{M-m_1+1} ... \int_{t^{'}_{M-1}}^{\delta t} dt^{'}_{M}  (-iH_0)^{m_1}X\ket{k^\text{'}}\bra{k^\text{'}}
 \end{equation*}
 
-Encore une fois, par les $J_n$,
+Encore une fois, par les démarches pour $J_n$, on peut dire
 
 \begin{equation*}
     S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{-i}{2}\sum_{k^\text{'}} \int_{0}^{\delta t}e^{i(-\lambda_{k^{'}}+\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'} \sum_{m_1 = 0}^{\infty}\frac{1}{m_1!}\left(\int_{t^{'}_{M-m_1}}^{\delta t} dt^{'}_{M-m_1+1}\right)^{m_1}(-iH_0)^{m_1}X\ket{k^\text{'}}\bra{k^\text{'}}
@@ -314,7 +312,7 @@ où on pose
     f(\lambda_k\delta t, (\lambda_{k^\text{'}}-\boldsymbol{\omega}_1[1])\delta t) = \frac{i}{\lambda_k\delta t - (\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])\delta t}\left(e^{-i\lambda_k\delta t} - e^{-i\delta t(\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])} \right) 
 \end{equation}
 
-Finalement, le calcul de $U^{(1)}(t + \delta t, t)$ se fait par (2.9).
+Finalement, le calcul de $U^{(1)}(t + \delta t, t)$ se complète avec (2.9).
 
 
 
