@@ -1,19 +1,19 @@
 \newpage
 \section{Application à un drive oscillant}
 \subsection{Préliminaires}
-Un drive est une onde qu'on envoie sur un transmon afin de manipuler son état. Ici, le drive oscille et son application occasionne des changements de niveaux d'énergie pour le transmon. Le qubit évolue donc avec un hamiltonien dépendant du temps. Dans un tel contexte, l'hamiltonien correspond à  
+Un drive est un laser qu'on envoie sur un transmon afin de manipuler son état. Contrairement à un pulse qui ne dure qu'un bref instant, un drive est appliqué plus longtemps de manière à avoir une rentrée d'énergie prolongée. Ici, le drive oscille et son application occasionne au transmon des changements de niveaux d'énergie. Le qubit évolue donc avec un hamiltonien dépendant du temps. Dans un tel contexte, ce dernier correspond à  
 
 \begin{equation}
     H(t) = H_0 + V(t)
 \end{equation}
 
-où, dans sa base d'états propres, $H_0 = \sum_{k} \lambda_k \ket{k}\bra{k}$ correspond aux énergies du transmon quand on le laisse tranquille et $V(t) = X\cos(\omega t)$ pour un certain opérateur $X$ correspond à la modification due au drive. En décomposant le cosinus en exponentielles complexes, 
+où, dans sa base d'états propres, $H_0 = \sum_{k} \lambda_k \ket{k}\bra{k}$ correspond aux énergies du transmon quand on le laisse tranquille et $V(t) = X\cos(\omega t)$, pour un opérateur quelconque $X$, correspond à la modification due au drive. En décomposant le cosinus en exponentielles complexes, 
 
 \begin{equation*}
     H(t) = H_0 + X\left(\frac{e^{i \omega t} + e^{-i\omega t}}{2}\right)
 \end{equation*}
 
-On s'attarde à l'opérateur d'évolution dans cette situation. Pour une variation infime de temps et en utilisant (2.1), on trouve (et ce n'est pas très beau)
+On s'attarde à l'opérateur d'évolution dans cette situation. Pour une variation infime de temps et en utilisant (2.1), on trouve (et ça fait peur)
 
 \begin{equation*}
     U(t+\delta t, t) = \sum_{n=0}^{\infty} (-i)^n \int_{t}^{t+\delta t}\int_{t}^{t_n}...\int_{t}^{t_2}H(t_n)...H(t_1)dt_1 ... dt_n
