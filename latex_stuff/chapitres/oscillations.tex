@@ -37,8 +37,6 @@ On peut voir que la distribution des termes correspond à l'ensemble des combina
     \caption{Arbre permettant de générer l'ensemble des combinaisons}
 \end{figure}
 
-On s'apprête maintenant à réécrire (2.2) différemment et la dérivation pour y arriver peut facilement porter à confusion. On essaie d'expliquer le plus possible chaque étape.
-
 \subsection{Dérivation (partie 1)}
 On considère maintenant $n$ comme étant le nombre de $V(t)$ présents dans chaque terme de (2.2) et on omet temporairement les indices $V(t_j)$ pour éviter de se mélanger avec l'ancienne écriture. Il ne s'agit plus du même $n$ que dans (2.2) et il faut alors un nouveau moyen d'écrire tout cela avec ce changement de variables. Pour se faire, on introduit les $m_i$ qui indiquent combien d'applications de $H_0$ il y a avant une application d'un $V(t)$. Par exemple,
 
@@ -112,20 +110,20 @@ On introduit maintenant le vecteur à $n$ dimensions $\boldsymbol{\omega}_n$ don
     \left\{\boldsymbol{\omega}_2\right\} = \left\{\left[+\omega, +\omega\right], \left[+\omega, -\omega\right], \left[-\omega, +\omega\right], \left[-\omega, -\omega\right]\right\}    
 \end{equation*}
 
-On peut alors réécrire le produit d'exponentielles comme
+On peut alors réécrire
 
 \begin{equation*}
-    \frac{1}{2^2}\sum_{\left\{\boldsymbol{\omega}_2\right\}}\left(\prod_{p=1}^{2}e^{i\boldsymbol{\omega}_2[p]t_{l(p)}} H_0XH_0XH_0\right)
+    H_0V(t_4)H_0V(t_2)H_0 = \frac{1}{2^2}\sum_{\left\{\boldsymbol{\omega}_2\right\}}\left(\prod_{p=1}^{2}e^{i\boldsymbol{\omega}_2[p]t_{l(p)}} H_0XH_0XH_0\right)
 \end{equation*}
 
-Ainsi, (2.3) peut être réécrit de la manière suivante.
+Ainsi, pour une chaîne arbitraire, (2.3) peut être réécrit de la manière suivante.
 
 \begin{equation}
     \frac{1}{2^n}\sum_{\left\{\boldsymbol{\omega}_n\right\}}\left(\prod_{p=1}^{n}e^{i\boldsymbol{\omega}_n[p]t_{l(p)}} (H_0)^{m_n}X ... X(H_0)^{m_0}\right)
 \end{equation}
 
 \subsection{Dérivation (partie 4)}
-Il est maintenant temps de remettre les précédentes parties dans le contexte de (2.2). D'abord, on se retrouve avec
+Il est maintenant temps de remettre les précédentes parties dans le contexte de (2.2). On reconstruit partie par partie. D'abord, en ne considérant que les intégrales d'un seul terme, on se retrouve grâce à notre précédente trouvaille avec
 
 \begin{equation*}
     \int_{t}^{t + \delta t}\int_{t}^{t_M}...\int_{t}^{t_2} (-i)^M \left(\frac{1}{2^n}\sum_{\left\{\boldsymbol{\omega}_n\right\}}\left(\prod_{p=1}^{n} e^{i\boldsymbol{\omega}_n[p]t_{l(p)}} (H_0)^{m_n}X...X(H_0)^{m_0}\right)\right)dt_1 ... dt_M
@@ -190,7 +188,7 @@ de sorte que
 \end{equation}
 
 \subsection{Calcul de l'ordre 0}
-On calcule explicitement $U^{(0)}(t+\delta t, t)$, soit la branche la plus à gauche dans la figure 2 où la chaîne d'opérateurs ne contient que des $H_0$. Ici, $\boldsymbol{m} = [m_0]$ et $\left\{\boldsymbol{\omega}_0\right\}$ est vide. Dès lors,
+On calcule explicitement l'ordre 0, soit $U^{(0)}(t+\delta t, t)$ la branche la plus à gauche dans la figure 2 où la chaîne d'opérateurs ne contient que des $H_0$. Ici, $\boldsymbol{m} = [m_0]$ et $\left\{\boldsymbol{\omega}_0\right\}$ est vide. Dès lors,
 
 \begin{equation*}
     S^{(0)}_{\boldsymbol{m}}(\boldsymbol{\omega}_0, \delta t) = \int_{0}^{\delta t}\int_{0}^{t_{m_0}^{'}}...\int_{0}^{t_2^{'}} (-iH_0)^{m_0}dt_1^{'}...dt_{m_0}^{'} = \frac{(-iH_0)^{m_0}}{m_0!}\int_{0}^{\delta t}...\int_{0}^{\delta t}dt_1^{'}...dt_{m_0}^{'} = \frac{(-iH_0\int_{0}^{\delta t}dt^{'})^{m_0}}{m_0!}
@@ -199,7 +197,7 @@ On calcule explicitement $U^{(0)}(t+\delta t, t)$, soit la branche la plus à ga
     = \frac{(-iH_0\delta t)^{m_0}}{m_0!}
 \end{equation*}
 
-où on a utilisé le mettre truc qu'avec les $J_n$. Par la suite,
+où on a utilisé le même truc qu'avec les $J_n$ pour changer les bornes d'intégration. Par la suite,
 
 \begin{equation*}
     S^{(0)}(\boldsymbol{\omega}_0, \delta t) = \frac{1}{2^0}\sum_{\boldsymbol{m} \in \mathbb{Z}^{0+1}_{+}}S^{(0)}_{\boldsymbol{m}}(\boldsymbol{\omega}_0, \delta t) = \sum_{m_0=0}^{\infty}\frac{(-iH_0\delta t)^{m_0}}{m_0!} = e^{-iH_0\delta t}
@@ -211,7 +209,7 @@ Comme $\left\{\boldsymbol{\omega}_0\right\}$ est vide, on obtient finalement
     U^{(0)}(t+\delta t, t) = e^{-iH_0\delta t}
 \end{equation*}
 
-Cela a du sens, car on a seulement des opérateurs indépendants du temps. Donc, on s'attend à ce que l'opérateur d'évolution soit de la même forme que (1.3), ce qui est le cas. De manière équivalente, on peut aussi faire le précédent calcul avec la définition de $H_0$. Ce résultat est évident, car $H_0$ est diagonal dans sa base d'états propres.
+Le résultat a du sens, car on a seulement des opérateurs indépendants du temps. Donc, on s'attend à ce que l'opérateur d'évolution soit de la même forme que (1.3), ce qui est le cas. De manière équivalente, on peut aussi faire le précédent calcul avec la définition $H_0 = \sum_{k}\lambda_k \ket{k}\bra{k}$. Ce qui suit est évident, car $H_0$ est diagonal dans sa base d'états propres.
 
 \begin{equation*}
     S^{(0)}(\boldsymbol{\omega}_0, \delta t) = \sum_{m_0 = 0}^{\infty}\frac{(-iH_0\delta t)^{m_0}}{m_0!} = \sum_{m_0 = 0}^{\infty}\frac{(-i\sum_{k}\lambda_k \ket{k}\bra{k}\delta t)^{m_0}}{m_0!} = \sum_{k}\sum_{m_0 = 0}^{\infty}\frac{(-i\lambda_k\delta t)^{m_0}}{m_0!}\ket{k}\bra{k} = \sum_{k}e^{-i\lambda_k\delta t}\ket{k}\bra{k}
