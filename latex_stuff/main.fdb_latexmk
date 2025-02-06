@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex main"] 1738358737.26269 "main.aux" "main.bbl" "main" 1738360117.35687 0
+["bibtex main"] 1738590792.46964 "main.aux" "main.bbl" "main" 1738591184.01425 0
   "./refs.bib" 1737745282.37479 1451 9e8e7a9ee647f93e286e0be6b20b95c4 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1738360117.14649 3352 666f9e2d7b3bfb2d260fa806c07b8606 "pdflatex"
+  "main.aux" 1738591183.78997 3616 91ef3b7bd54f1a3d90406d9db8383da3 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1738360115.99333 "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" "main.pdf" "main" 1738360117.35708 0
+["pdflatex"] 1738591182.60145 "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" "main.pdf" "main" 1738591184.01449 0
   "/etc/texmf/web2c/texmf.cnf" 1736284741.41123 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" 1738330444.23822 2231 34e963b0f9cf5112ed6b54162f7b4b1e ""
+  "/home/mathis/Documents/mathis/Dysolve/latex_stuff/main.tex" 1738590791.63894 2265 fceab315781aa8f2accda39ba6e95bc0 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -253,15 +253,16 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1736523425.67346 165051 331a4b0cc8c79ccd6b2fbd918be026fc ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736523451 6837863 8e982e5ba70809c29420bac6757cc55b ""
+  "chapitres/algo.tex" 1738590765.80494 42 0ea32f90060a049d992732859772e61e ""
   "chapitres/eq_maitre.tex" 1738271963.91394 23326 6d6ba67789e76bc60a770c5d478883b5 ""
-  "chapitres/oscillations.tex" 1738360115.67849 24565 0d2700d4ae525ccd8a12626ff37e0bcd ""
+  "chapitres/oscillations.tex" 1738591182.26897 25469 f60f709ec58e4ff66b2dce721d2b7ea3 ""
   "images/ch1/region_integration.jpeg" 1737743657.31265 56084 adfabbc5bf0be64546395de913bc8c92 ""
   "images/ch2/embranchements.png" 1737744200.2847 92135 71ea9475da1e06202a0f31876e45c946 ""
-  "main.aux" 1738360117.14649 3352 666f9e2d7b3bfb2d260fa806c07b8606 "pdflatex"
-  "main.bbl" 1738358737.28753 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
-  "main.out" 1738360117.14749 3759 e7d8d7439014a210d87d3872856120fb "pdflatex"
-  "main.tex" 1738330444.23822 2231 34e963b0f9cf5112ed6b54162f7b4b1e ""
-  "main.toc" 1738360117.14749 1861 28588b4172f4e14fe2e93269186c4ff0 "pdflatex"
+  "main.aux" 1738591183.78997 3616 91ef3b7bd54f1a3d90406d9db8383da3 "pdflatex"
+  "main.bbl" 1738590792.49294 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
+  "main.out" 1738591183.79197 4147 3a06549f6e8a3e2b625af5c75dcd477a "pdflatex"
+  "main.tex" 1738590791.63894 2265 fceab315781aa8f2accda39ba6e95bc0 ""
+  "main.toc" 1738591183.79197 2043 866aa46b8aff0544257877786483907b "pdflatex"
   (generated)
   "main.aux"
   "main.log"

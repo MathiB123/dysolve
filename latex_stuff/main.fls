@@ -443,6 +443,10 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
+INPUT ./chapitres/algo.tex
+INPUT ./chapitres/algo.tex
+INPUT ./chapitres/algo.tex
+INPUT ./chapitres/algo.tex
 INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl

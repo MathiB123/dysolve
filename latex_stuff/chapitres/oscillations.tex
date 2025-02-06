@@ -313,7 +313,9 @@ où on pose
 
 Finalement, le calcul de $U^{(1)}(t + \delta t, t)$ se complète avec (2.9).
 
-On remarque qu'autant pour $S^{(0)}(\boldsymbol{\omega}_0, \delta t)$ que $S^{(1)}(\boldsymbol{\omega}_1, \delta t)$, ils ne dépendent pas du temps actuel $t$ dans l'évolution, mais seulement de l'écart de temps $\delta t$. D'ailleurs, cette observation sera aussi vrai pour les ordres supérieurs. Ainsi, si l'évolution totale dure un temps $T = P\delta t$ pour un entier $P$ (donc qu'on découpe l'évolution en $P$ parties égales), alors on peut tous les évaluer simultanément. Grâce à cela, on pourrait calculer un opérateur d'évolution général $U((p+1)\delta t, p\delta t)$ puis simplement y substituer le $p$ approprié pour reconstruire l'entièreté de l'évolution.
+On remarque qu'autant pour $S^{(0)}(\boldsymbol{\omega}_0, \delta t)$ que $S^{(1)}(\boldsymbol{\omega}_1, \delta t)$, ils ne dépendent pas du temps actuel $t$ dans l'évolution, mais seulement de l'écart de temps $\delta t$. D'ailleurs, cette observation sera aussi vrai pour les ordres supérieurs. 
+
+%Ainsi, si l'évolution totale dure un temps $T = P\delta t$ pour un entier $P$ (donc qu'on découpe l'évolution en $P$ parties égales), alors on peut tous les évaluer simultanément. Grâce à cela, on pourrait calculer un opérateur d'évolution général $U((p+1)\delta t, p\delta t)$ puis simplement y substituer le $p$ approprié pour reconstruire l'entièreté de l'évolution.
 
 \subsection{Calcul de l'ordre $n$}
 \subsubsection{Notation}
@@ -336,18 +338,22 @@ Par récurrence et en s'inspirant des démarches pour l'ordre 0 et 1, on pourrai
     S^{(n)}(\boldsymbol{\omega}_n, \delta t) = \left(\frac{-i \delta t}{2}\right)^n \sum_{\boldsymbol{k}_n} f(\boldsymbol{\lambda}_n(\boldsymbol{k}_n)\delta t - \boldsymbol{c}(\boldsymbol{\omega}_n)\delta t) \bra{k^{(n)}}X\ket{k^{(n-1)}}... \bra{k^{(1)}}X\ket{k^{(0)}} \ket{k^{(n)}}\bra{k^{(0)}}
 \end{equation*}
 
-Faisons sens de cela. Tout d'abord, $(-i/2)^n$ provient simplement de (2.7) et (2.8) qu'on garde en facteur tout au long des calculs. Par la suite, les différents éléments de matrice $\bra{k^{(j+1)}}X\ket{k^{(j)}}$ de $X$ avec le ket-bra $\ket{k^{(n)}}\bra{k^{(0)}}$ viennent des différentes exponentielles complexes contenant $H_0$ qu'on réécrit de cette manière sachant que $H_0$ est diagonal. C'est d'ailleurs pour cela qu'on doit faire $\sum_{\boldsymbol{k}_n}$. Quant à $(\delta t)^n$ et $f(\boldsymbol{\lambda}_n(\boldsymbol{k}_n)\delta t - \boldsymbol{c}(\boldsymbol{\omega}_n)\delta t)$, ils arrivent de la généralisation (qu'on ne détaillera pas, voir plutôt le paper) de (2.13). En fait, il existe une relation de récursion pour $f$ où pour un vecteur $\boldsymbol{a}$ de taille $n$
+Faisons sens de cela. Tout d'abord, $(-i/2)^n$ provient simplement de (2.7) et (2.8) qu'on garde en facteur tout au long des calculs. Par la suite, les différents éléments de matrice $\bra{k^{(j+1)}}X\ket{k^{(j)}}$ de $X$ avec le ket-bra $\ket{k^{(n)}}\bra{k^{(0)}}$ viennent des différentes exponentielles complexes contenant $H_0$ qu'on réécrit de cette manière sachant que $H_0$ est diagonal. C'est d'ailleurs pour cela qu'on doit faire une $\sum_{\boldsymbol{k}_n}$. Quant à $(\delta t)^n$ et $f(\boldsymbol{\lambda}_n(\boldsymbol{k}_n)\delta t - \boldsymbol{c}(\boldsymbol{\omega}_n)\delta t)$, ils arrivent de la généralisation (qu'on ne détaillera pas, voir plutôt le paper) de (2.13). En fait, il existe une relation de récursion pour $f$ où pour un vecteur $\boldsymbol{a}$ de taille $n$
 
 \begin{equation*}
     f(\boldsymbol{a}) = i\frac{f(\boldsymbol{g}(\boldsymbol{a})) - f(\boldsymbol{g}^2(\boldsymbol{a}) \cup \boldsymbol{a}[n])}{\boldsymbol{a}[n-1] - \boldsymbol{a}[n]}
 \end{equation*}
 
-*parler de $g$, $g^2$ et $\cup$. Limite quand dégénéré.
+Ici, $\boldsymbol{g}(\boldsymbol{a})$ retourne $\boldsymbol{a}$ sans son dernier élément, $\boldsymbol{g}^2(\boldsymbol{a}) = \boldsymbol{g}(\boldsymbol{g}(\boldsymbol{a}))$ et $\cup$ ajoute un élément à un vecteur de sorte que $\boldsymbol{a} = \boldsymbol{g}(\boldsymbol{a}) \cup \boldsymbol{a}[n]$. Prendre la limite si jamais division par 0 au dénominateur.
 
+\subsection{Reconstruire l'opérateur d'évolution}
+Si on fait une évolution sur un temps $T = P\delta t$ où $P$ est un certain entier, alors 
 
+\begin{equation*}
+    U(T,0) = \mathcal{T}\prod_{p=0}^{P}U((p+1)\delta t, p\delta t) = \mathcal{T}\prod_{p=0}^{P} U_p = \mathcal{T}\prod_{p=0}^{P}\left(\sum_{n=0}^{\infty}U_p^{(n)}\right) \approx  \mathcal{T}\prod_{p=0}^{P}\left(\sum_{r=0}^{n}U_p^{(r)}\right)
+\end{equation*}
 
-
-
+où on a tronqué la somme infinie. L'opérateur de produit chronologique ne fait qu'ordonner le produit de manière ascendante par rapport au temps de droite à gauche.
 
 
 
