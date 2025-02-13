@@ -155,7 +155,7 @@ qu'on remplace dans (1.5) donnant ainsi
     U(t,t_0) = \sum_{n=0}^{\infty}\frac{(-i)^n}{n!}\int_{t_0}^{t}\int_{t_0}^{t}...\int_{t_0}^{t} \mathcal{T} \left[H(t_1)H(t_2)...H(t_n)\right]dt_n ... dt_2 dt_1
 \end{equation}
 
-De là, si les hamiltoniens commutent (donc que $\mathcal{T}$ ne fait rien), on voit qu'on peut retomber sur (1.4).
+De là, si les hamiltoniens commutent ($\mathcal{T}$ ne fait rien), on voit qu'on peut retomber sur (1.4).
 
 \begin{equation*}
     U(t,t_0) = \sum_{n=0}^{\infty}\frac{(-i)^n}{n!}\int_{t_0}^{t}\int_{t_0}^{t}...\int_{t_0}^{t}H(t_1)H(t_2)...H(t_n)dt_n ... dt_2 dt_1 = \sum_{n=0}^{\infty}\frac{(-i)^n}{n!}\left(\int_{t_0}^{t}H(t^{'})dt^{'}\right)^n
@@ -189,10 +189,10 @@ Pour respecter la nouvelle notation, on a ici seulement besoin de renommer les v
     U(t,t_0) = \mathbb{I} -i\int_{t_0}^{t}H(t_1)dt_1 - \int_{t_0}^{t}\int_{t_0}^{t_2}H(t_2)H(t_1)U(t_1,t_0)dt_1dt_2
 \end{equation*}
 
-En continuant le processus et en renommant les variables comme il faut, on obtient une forme générale pour cette notation alternative.
+En continuant le processus et en renommant les variables comme il faut, on obtient une forme générale pour cette notation alternative. Ici, $t_n \geq t_{n-1} \geq ... \geq t_2$.
 
 \begin{equation}
-    U(t,t_0) = \sum_{n=0}^{\infty} (-i)^n \int_{t_0}^{t}\int_{t_0}^{t_n}...\int_{t_0}^{t_2}H(t_n)...H(t_1)dt_1 ... dt_{n-1} dt_n
+    U(t,t_0) = \sum_{n=0}^{\infty} (-i)^n \int_{t_0}^{t}\int_{t_0}^{t_n}...\int_{t_0}^{t_2}H(t_n)...H(t_1)dt_1 ... dt_{n-1} dt_n = \sum_{n=0}^{\infty} \frac{(-i)^n}{n!} \int_{t_0}^{t}...\int_{t_0}^{t}\mathcal{T}\left[H(t_n)...H(t_1)\right]dt_1 ... dt_n 
 \end{equation}
 
 
