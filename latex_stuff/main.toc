@@ -15,9 +15,8 @@
 \contentsline {subsection}{\numberline {2.6}Dérivation (dernière partie)}{9}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}Calcul de l'ordre 0}{10}{subsection.2.7}%
 \contentsline {subsection}{\numberline {2.8}Calcul de l'ordre 1}{10}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Calcul de l'ordre $n$}{12}{subsection.2.9}%
-\contentsline {subsubsection}{\numberline {2.9.1}Notation}{12}{subsubsection.2.9.1}%
-\contentsline {subsubsection}{\numberline {2.9.2}Formule pour l'ordre $n$}{13}{subsubsection.2.9.2}%
-\contentsline {subsection}{\numberline {2.10}Reconstruire l'opérateur d'évolution}{13}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.9}Calcul de l'ordre 2}{12}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Calcul de l'ordre $n$}{12}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Reconstruire l'opérateur d'évolution}{13}{subsection.2.11}%
 \contentsline {section}{\numberline {3}Algorithme Dysolve}{14}{section.3}%
 \contentsline {section}{R\'ef\'erences}{15}{section*.4}%

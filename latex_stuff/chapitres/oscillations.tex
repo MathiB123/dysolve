@@ -335,8 +335,13 @@ où le truc des $J_n$ est encore utilisé. Par la suite, on peut remplacer la d�
     = \frac{-i}{2}\sum_{k^{(1)}}\sum_{k^{(0)}}\int_{0}^{\delta t}e^{-i\lambda_{k^{(1)}}(\delta t - t^{'}_{m_0 + 1})} e^{i\boldsymbol{\omega}_1[1]t^{'}_{m_0+1}}e^{-i\lambda_{k^{(0)}} t^{'}_{m_0 + 1}}dt^{'}_{m_0 + 1} \bra{k^{(1)}}X \ket{k^{(0)}}\ket{k^{(1)}}\bra{k^{(0)}}
 \end{equation*}
 \begin{equation*}
-    = \frac{-i}{2}\sum_{k^{(1)}}\sum_{k^{(0)}}e^{-i\lambda_{k^{(1)}}\delta t}\int_{0}^{\delta t}e^{i(\lambda_{k^{(1)}} + \boldsymbol{\omega}_1[1] - \lambda_{k^{(0)}})t^{'}_{m_0 + 1}}dt^{'}_{m_0 + 1} \bra{k^{(1)}}X \ket{k^{(0)}}\ket{k^{(1)}}\bra{k^{(0)}}
+    = \frac{-i}{2}\sum_{k^{(1)}}\sum_{k^{(0)}}e^{-i\lambda_{k^{(1)}}\delta t}\int_{0}^{\delta t}e^{i(\boldsymbol{\omega}_1[1] + \lambda_{k^{(1)}} - \lambda_{k^{(0)}})t^{'}_{m_0 + 1}}dt^{'}_{m_0 + 1} \bra{k^{(1)}}X \ket{k^{(0)}}\ket{k^{(1)}}\bra{k^{(0)}}
 \end{equation*}
+\begin{equation*}
+    = \frac{-i}{2}\sum_{k^{(1)}}\sum_{k^{(0)}}e^{-i\lambda_{k^{(1)}}\delta t}\int_{0}^{\delta t}e^{i(\boldsymbol{\omega}_1[1] + \lambda_{k^{(1)}} - \lambda_{k^{(0)}})t_1}dt_1 \bra{k^{(1)}}X \ket{k^{(0)}}\ket{k^{(1)}}\bra{k^{(0)}}
+\end{equation*}
+
+Finalement, on complète le calcul de l'ordre 1 avec (2.9).
 
 % \begin{equation*}
 %     S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{-i}{2}\sum_{k^\text{'}}\sum_{m_1 = 0}^{\infty}(-iH_0)^{m_1}X \int_{0}^{\delta t}e^{i(-\lambda_{k^{'}}+\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'} \int_{t^{'}_{M-m_1}}^{\delta t} dt^{'}_{M-m_1+1} ... \int_{t^{'}_{M-1}}^{\delta t} dt^{'}_{M}  \ket{k^\text{'}}\bra{k^\text{'}}
@@ -365,71 +370,117 @@ où le truc des $J_n$ est encore utilisé. Par la suite, on peut remplacer la d�
 % \begin{equation*}
 %     = \frac{-i}{2}\sum_{k, k^\text{'}}\int_{0}^{\delta t}e^{i(\lambda_k -\lambda_{k^{'}}+\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'} e^{-i\lambda_k\delta t} \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
 % \end{equation*}
-*À enlever/modifier
-\begin{equation*}
-    = \frac{-i}{2}\sum_{k, k^\text{'}}\frac{1}{i(\lambda_k - \lambda_{k^\text{'}} + \boldsymbol{\omega}_1[1])}\left(e^{i\delta t(\lambda_k - \lambda_{k^\text{'}} + \boldsymbol{\omega}_1[1])} - 1\right)e^{-i\lambda_k\delta t} \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
-\end{equation*}
-\begin{equation*}
-    = \frac{-i}{2}\sum_{k, k^\text{'}}\frac{1}{-i(\lambda_k - (\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1]))}\left(e^{-i\lambda_k\delta t} - e^{-i\delta t(\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])} \right) \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
-\end{equation*}
-\begin{equation*}
-    = \frac{-i\delta t}{2}\sum_{k, k^\text{'}}\frac{i}{\lambda_k\delta t - (\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])\delta t}\left(e^{-i\lambda_k\delta t} - e^{-i\delta t(\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])} \right) \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
-\end{equation*}
-\begin{equation}
-    = \frac{-i\delta t}{2}\sum_{k, k^\text{'}}f(\lambda_k\delta t, (\lambda_{k^\text{'}}-\boldsymbol{\omega}_1[1])\delta t)\bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
-\end{equation}
+% *À enlever/modifier
+% \begin{equation*}
+%     = \frac{-i}{2}\sum_{k, k^\text{'}}\frac{1}{i(\lambda_k - \lambda_{k^\text{'}} + \boldsymbol{\omega}_1[1])}\left(e^{i\delta t(\lambda_k - \lambda_{k^\text{'}} + \boldsymbol{\omega}_1[1])} - 1\right)e^{-i\lambda_k\delta t} \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
+% \end{equation*}
+% \begin{equation*}
+%     = \frac{-i}{2}\sum_{k, k^\text{'}}\frac{1}{-i(\lambda_k - (\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1]))}\left(e^{-i\lambda_k\delta t} - e^{-i\delta t(\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])} \right) \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
+% \end{equation*}
+% \begin{equation*}
+%     = \frac{-i\delta t}{2}\sum_{k, k^\text{'}}\frac{i}{\lambda_k\delta t - (\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])\delta t}\left(e^{-i\lambda_k\delta t} - e^{-i\delta t(\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])} \right) \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
+% \end{equation*}
+% \begin{equation}
+%     = \frac{-i\delta t}{2}\sum_{k, k^\text{'}}f(\lambda_k\delta t, (\lambda_{k^\text{'}}-\boldsymbol{\omega}_1[1])\delta t)\bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
+% \end{equation}
 
-où on pose
+% où on pose
 
-\begin{equation}
-    f(\lambda_k\delta t, (\lambda_{k^\text{'}}-\boldsymbol{\omega}_1[1])\delta t) = \frac{i}{\lambda_k\delta t - (\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])\delta t}\left(e^{-i\lambda_k\delta t} - e^{-i\delta t(\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])} \right) 
-\end{equation}
+% \begin{equation}
+%     f(\lambda_k\delta t, (\lambda_{k^\text{'}}-\boldsymbol{\omega}_1[1])\delta t) = \frac{i}{\lambda_k\delta t - (\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])\delta t}\left(e^{-i\lambda_k\delta t} - e^{-i\delta t(\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])} \right) 
+% \end{equation}
 
-On remarque qu'autant pour $S^{(0)}(\boldsymbol{\omega}_0, \delta t)$ que $S^{(1)}(\boldsymbol{\omega}_1, \delta t)$, ils ne dépendent pas du temps actuel $t$ dans l'évolution, mais seulement de l'écart de temps $\delta t$. Cette observation sera aussi vrai pour les ordres supérieurs. 
+% On remarque qu'autant pour $S^{(0)}(\boldsymbol{\omega}_0, \delta t)$ que $S^{(1)}(\boldsymbol{\omega}_1, \delta t)$, ils ne dépendent pas du temps actuel $t$ dans l'évolution, mais seulement de l'écart de temps $\delta t$. Cette observation sera aussi vrai pour les ordres supérieurs. 
 
-Par ailleurs, il se pourrait que $\lambda_k\delta t - (\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])\delta t = 0$, résultant en une division par 0 dans (2.13). Pour contourner ce problème, on peut calculer à l'aide de la règle de l'Hôpital la limite quand $\lambda_k\delta t \rightarrow (\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])\delta t$ de (2.13). De manière équivalente, on peut revenir plus haut dans les calculs de (2.12) pour simplifier.
+% Par ailleurs, il se pourrait que $\lambda_k\delta t - (\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])\delta t = 0$, résultant en une division par 0 dans (2.13). Pour contourner ce problème, on peut calculer à l'aide de la règle de l'Hôpital la limite quand $\lambda_k\delta t \rightarrow (\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])\delta t$ de (2.13). De manière équivalente, on peut revenir plus haut dans les calculs de (2.12) pour simplifier.
 
-\begin{equation*}
-    S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{-i}{2}\sum_{k, k^\text{'}}\int_{0}^{\delta t}e^{i(\lambda_k -\lambda_{k^{'}}+\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'} e^{-i\lambda_k\delta t} \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
-\end{equation*}
-\begin{equation*}
-    = \frac{-i}{2}\sum_{k, k^\text{'}}\int_{0}^{\delta t}e^{0} dt_{M-m_1}^{'} e^{-i\lambda_k\delta t} \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}} = \frac{-i \delta t}{2}\sum_{k, k^\text{'}}e^{-i\lambda_k\delta t} \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}} 
-\end{equation*}
-\begin{equation*}
-    \implies \lim_{\lambda_k\delta t \rightarrow (\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])\delta t} f(\lambda_k\delta t, (\lambda_{k^\text{'}}-\boldsymbol{\omega}_1[1])\delta t) = e^{-i\lambda_k \delta t}
-\end{equation*}
+% \begin{equation*}
+%     S^{(1)}(\boldsymbol{\omega}_1, \delta t) = \frac{-i}{2}\sum_{k, k^\text{'}}\int_{0}^{\delta t}e^{i(\lambda_k -\lambda_{k^{'}}+\boldsymbol{\omega}_1[1])t^{'}_{M-m_1}} dt_{M-m_1}^{'} e^{-i\lambda_k\delta t} \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}}
+% \end{equation*}
+% \begin{equation*}
+%     = \frac{-i}{2}\sum_{k, k^\text{'}}\int_{0}^{\delta t}e^{0} dt_{M-m_1}^{'} e^{-i\lambda_k\delta t} \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}} = \frac{-i \delta t}{2}\sum_{k, k^\text{'}}e^{-i\lambda_k\delta t} \bra{k}X\ket{k^\text{'}}\ket{k}\bra{k^\text{'}} 
+% \end{equation*}
+% \begin{equation*}
+%     \implies \lim_{\lambda_k\delta t \rightarrow (\lambda_{k^\text{'}} - \boldsymbol{\omega}_1[1])\delta t} f(\lambda_k\delta t, (\lambda_{k^\text{'}}-\boldsymbol{\omega}_1[1])\delta t) = e^{-i\lambda_k \delta t}
+% \end{equation*}
 
 
 %Ainsi, si l'évolution totale dure un temps $T = P\delta t$ pour un entier $P$ (donc qu'on découpe l'évolution en $P$ parties égales), alors on peut tous les évaluer simultanément. Grâce à cela, on pourrait calculer un opérateur d'évolution général $U((p+1)\delta t, p\delta t)$ puis simplement y substituer le $p$ approprié pour reconstruire l'entièreté de l'évolution.
 
-\subsection{Calcul de l'ordre $n$}
-\subsubsection{Notation}
-Avant de donner une formule générale pour l'ordre $n$, on doit d'abord introduire quelques notations. Premièrement, il n'est pas pratique d'utiliser des apostrophes pour spécifier les $n+1$ sommes sur les états propres de $H_0$, car on aura de plus en plus de sommes et la notation sera horrible. Pour se faire, on introduit $\boldsymbol{k}_n = (k^{(0)}, ..., k^{(n)})$ qui sera un ensemble d'indices pour spécifier ces $n+1$ sommes sur les états propres.
-
-Deuxièmement, on spécifiera les énergies propres de chacune des sommes par $\boldsymbol{\lambda}_n(\boldsymbol{k}_n) = (\lambda_{k^{(0)}}, ..., \lambda_{k^{(n)}})$ où, pour préciser, $H_0\ket{k^{(j)}} = \lambda_{k^{(j)}}\ket{k^{(j)}}$.
-
-Troisièmement, on pose un "vecteur cumulatif" qui facilitera la généralisation.
-
+\subsection{Calcul de l'ordre 2}
+Pour l'ordre 2 (et ceux qui suivent), l'objectif est encore de changer l'ordre d'intégration continuellement pour monter les $H_0$ dans des exponentielles.
 \begin{equation*}
-    \boldsymbol{c}(\boldsymbol{\omega_n}) = \left(\sum_{p=0}^{n-1}\boldsymbol{\omega}_n[n-p], \sum_{p=0}^{n-2}\boldsymbol{\omega}_n[n-p], ..., \boldsymbol{\omega}_n[n], 0 \right)
+    S^{(2)}(\boldsymbol{\omega}_2, \delta t) = \left(\frac{-i}{2}\right)^2\sum_{m_2,m_1,m_0 = 0}^{\infty}\int_{0}^{\delta t}dt_M^{'}... \int_{0}^{t_2^{'}}e^{i\boldsymbol{\omega}_2[2]t^{'}_{m_0+m_1+2}}e^{i\boldsymbol{\omega}_2[1]t^{'}_{m_0+1}}(-iH_0)^{m_2}X(-iH_0)^{m_1}X(-iH_0)^{m_0} dt_1^{'}
+\end{equation*}
+\begin{equation*}
+    = \left(\frac{-i}{2}\right)^2\sum_{m_2,m_1= 0}^{\infty}\int_{0}^{\delta t}dt_M^{'}... \int_{0}^{t_{m_0+2}^{'}}e^{i\boldsymbol{\omega}_2[2]t^{'}_{m_0+m_1+2}}e^{i\boldsymbol{\omega}_2[1]t^{'}_{m_0+1}}(-iH_0)^{m_2}X(-iH_0)^{m_1}Xe^{-iH_0t_{m_0+1}^{'}} dt_{m_0+1}^{'}
+\end{equation*}
+\begin{equation*}
+    = \left(\frac{-i}{2}\right)^2\sum_{m_2= 0}^{\infty}\int_{0}^{\delta t}dt_M^{'}...\int_{0}^{t^{'}_{m_0+m_1+3}} e^{i\boldsymbol{\omega}_2[2]t^{'}_{m_0+m_1+2}} dt^{'}_{m_0+m_1+2} 
+\end{equation*}
+\begin{equation*}
+    \int_{0}^{t^{'}_{m_0+m_1+2}}e^{i\boldsymbol{\omega}_2[1]t^{'}_{m_0+1}} (-iH_0)^{m_2}Xe^{-iH_0(t_{m_0+m_1+2}^{'} - t_{m_0+1}^{'})}Xe^{-iH_0t_{m_0+1}^{'}} dt^{'}_{m_0+1}
+\end{equation*}
+\begin{equation*}
+    = \left(\frac{-i}{2}\right)^2 \int_{0}^{\delta t} e^{i\boldsymbol{\omega}_2[2]t^{'}_{m_0+m_1+2}}dt^{'}_{m_0+m_1+2}
+\end{equation*}
+\begin{equation*}
+    \int_{0}^{t^{'}_{m_0+m_1+2}}e^{i\boldsymbol{\omega}_2[1]t^{'}_{m_0+1}} e^{-iH_0(\delta t - t_{m_0+m_1+2}^{'} )}Xe^{-iH_0(t_{m_0+m_1+2}^{'} - t_{m_0+1}^{'})}Xe^{-iH_0t_{m_0+1}^{'}} dt^{'}_{m_0+1}
+\end{equation*}
+\begin{equation*}
+    = \left(\frac{-i}{2}\right)^2 \sum_{k^{(2)},k^{(1)},k^{(0)}} e^{-i\lambda_{k^{(2)}}\delta t}\int_{0}^{\delta t} e^{i(\boldsymbol{\omega}_2[2] + \lambda_{k^{(2)}} - \lambda_{k^{(1)}})t^{'}_{m_0+m_1+2}}dt^{'}_{m_0+m_1+2}
+\end{equation*}
+\begin{equation*}
+    \int_{0}^{t^{'}_{m_0+m_1+2}}e^{i(\boldsymbol{\omega}_2[1] + \lambda_{k^{(1)}} - \lambda_{k^{(0)}})t^{'}_{m_0+1}}dt^{'}_{m_0+1}\bra{k^{(2)}}X \ket{k^{(1)}}\bra{k^{(1)}}X \ket{k^{(0)}}\ket{k^{(2)}}\bra{k^{(0)}}
+\end{equation*}
+\begin{equation*}
+    = \frac{1}{2!}\left(\frac{-i}{2}\right)^2 \sum_{k^{(2)},k^{(1)},k^{(0)}} e^{-i\lambda_{k^{(2)}}\delta t}\int_{0}^{\delta t} e^{i(\boldsymbol{\omega}_2[2] + \lambda_{k^{(2)}} - \lambda_{k^{(1)}})t_2}dt_2
+\end{equation*}
+\begin{equation*}
+    \int_{0}^{\delta t}e^{i(\boldsymbol{\omega}_2[1] + \lambda_{k^{(1)}} - \lambda_{k^{(0)}})t_1}dt_1\bra{k^{(2)}}X \ket{k^{(1)}}\bra{k^{(1)}}X \ket{k^{(0)}}\ket{k^{(2)}}\bra{k^{(0)}}
 \end{equation*}
 
-Finalement, lorsqu'on verra $\sum_{\boldsymbol{k}_n}$, on voudra dire $\sum_{k^{(n)}}\sum_{k^{(n-1)}}...\sum_{k^{(0)}}$.
+On complète le calcul de l'ordre 2 avec (2.9).
 
-\subsubsection{Formule pour l'ordre $n$}
-Par récurrence et en s'inspirant des démarches pour l'ordre 0 et 1, on pourrait montrer que l'ordre $n$ s'écrit
+\subsection{Calcul de l'ordre $n$}
+On continue simplement le pattern. Ainsi,
 
-\begin{equation}
-    S^{(n)}(\boldsymbol{\omega}_n, \delta t) = \left(\frac{-i \delta t}{2}\right)^n \sum_{\boldsymbol{k}_n} f(\boldsymbol{\lambda}_n(\boldsymbol{k}_n)\delta t - \boldsymbol{c}(\boldsymbol{\omega}_n)\delta t) \bra{k^{(n)}}X\ket{k^{(n-1)}}... \bra{k^{(1)}}X\ket{k^{(0)}} \ket{k^{(n)}}\bra{k^{(0)}}
-\end{equation}
+\begin{equation*}
+    S^{(n)}(\boldsymbol{\omega}_n, \delta t) = \frac{1}{n!}\left(\frac{-i}{2}\right)^n \sum_{\boldsymbol{k}_n}e^{-i\lambda_{k^{(n)}}\delta t}\int_{0}^{\delta t}e^{i(\boldsymbol{\omega}_n[n] + \lambda_{k^{(n)}} - \lambda_{k^{(n-1)}})t_n}dt_n ... \int_{0}^{\delta t}e^{i(\boldsymbol{\omega}_n[1] + \lambda_{k^{(1)}} - \lambda_{k^{(0)}})t_1}dt_1 
+\end{equation*}
+\begin{equation*}
+    \bra{k^{(n)}}X \ket{k^{(n-1)}}...\bra{k^{(1)}}X \ket{k^{(0)}}\ket{k^{(n)}}\bra{k^{(0)}}
+\end{equation*}
 
-Faisons sens de cela. Tout d'abord, $(-i/2)^n$ provient simplement de (2.7) et (2.8) qu'on garde en facteur tout au long des calculs. Par la suite, les différents éléments de matrice $\bra{k^{(j+1)}}X\ket{k^{(j)}}$ de $X$ avec le ket-bra $\ket{k^{(n)}}\bra{k^{(0)}}$ viennent des différentes exponentielles complexes contenant $H_0$ qu'on réécrit de cette manière sachant que $H_0$ est diagonal. C'est d'ailleurs pour cela qu'on doit faire une $\sum_{\boldsymbol{k}_n}$. Quant à $(\delta t)^n$ et $f(\boldsymbol{\lambda}_n(\boldsymbol{k}_n)\delta t - \boldsymbol{c}(\boldsymbol{\omega}_n)\delta t)$, ils arrivent de la généralisation (qu'on ne détaillera pas, voir plutôt le paper) de (2.13). En fait, il existe une relation de récursion pour $f$ où pour un vecteur $\boldsymbol{a}$
+Ici, $\sum_{\boldsymbol{k}_n}$ veut dire $\sum_{k^{(n)}}\sum_{k^{(n-1)}}...\sum_{k^{(0)}}$. On finit le calcul de l'ordre $n$ avec (2.9).
 
-\begin{equation}
-    f(\boldsymbol{a}) = i\frac{f(\boldsymbol{g}(\boldsymbol{a})) - f(\boldsymbol{g}^2(\boldsymbol{a}) \cup \boldsymbol{a}[n])}{\boldsymbol{a}[n-1] - \boldsymbol{a}[n]}
-\end{equation}
+% \subsubsection{Notation}
+% Avant de donner une formule générale pour l'ordre $n$, on doit d'abord introduire quelques notations. Premièrement, il n'est pas pratique d'utiliser des apostrophes pour spécifier les $n+1$ sommes sur les états propres de $H_0$, car on aura de plus en plus de sommes et la notation sera horrible. Pour se faire, on introduit $\boldsymbol{k}_n = (k^{(0)}, ..., k^{(n)})$ qui sera un ensemble d'indices pour spécifier ces $n+1$ sommes sur les états propres.
 
-Ici, $\boldsymbol{g}(\boldsymbol{a})$ retourne $\boldsymbol{a}$ sans son élément tout à gauche, $\boldsymbol{g}^2(\boldsymbol{a}) = \boldsymbol{g}(\boldsymbol{g}(\boldsymbol{a}))$ et $\cup$ ajoute un élément à la gauche complètement du vecteur de sorte que $\boldsymbol{a} = \boldsymbol{g}(\boldsymbol{a}) \cup \boldsymbol{a}[n]$. 
+% Deuxièmement, on spécifiera les énergies propres de chacune des sommes par $\boldsymbol{\lambda}_n(\boldsymbol{k}_n) = (\lambda_{k^{(0)}}, ..., \lambda_{k^{(n)}})$ où, pour préciser, $H_0\ket{k^{(j)}} = \lambda_{k^{(j)}}\ket{k^{(j)}}$.
+
+% Troisièmement, on pose un "vecteur cumulatif" qui facilitera la généralisation.
+
+% \begin{equation*}
+%     \boldsymbol{c}(\boldsymbol{\omega_n}) = \left(\sum_{p=0}^{n-1}\boldsymbol{\omega}_n[n-p], \sum_{p=0}^{n-2}\boldsymbol{\omega}_n[n-p], ..., \boldsymbol{\omega}_n[n], 0 \right)
+% \end{equation*}
+
+% Finalement, lorsqu'on verra $\sum_{\boldsymbol{k}_n}$, on voudra dire $\sum_{k^{(n)}}\sum_{k^{(n-1)}}...\sum_{k^{(0)}}$.
+
+% \subsubsection{Formule pour l'ordre $n$}
+% Par récurrence et en s'inspirant des démarches pour l'ordre 0 et 1, on pourrait montrer que l'ordre $n$ s'écrit
+
+% \begin{equation}
+%     S^{(n)}(\boldsymbol{\omega}_n, \delta t) = \left(\frac{-i \delta t}{2}\right)^n \sum_{\boldsymbol{k}_n} f(\boldsymbol{\lambda}_n(\boldsymbol{k}_n)\delta t - \boldsymbol{c}(\boldsymbol{\omega}_n)\delta t) \bra{k^{(n)}}X\ket{k^{(n-1)}}... \bra{k^{(1)}}X\ket{k^{(0)}} \ket{k^{(n)}}\bra{k^{(0)}}
+% \end{equation}
+
+% Faisons sens de cela. Tout d'abord, $(-i/2)^n$ provient simplement de (2.7) et (2.8) qu'on garde en facteur tout au long des calculs. Par la suite, les différents éléments de matrice $\bra{k^{(j+1)}}X\ket{k^{(j)}}$ de $X$ avec le ket-bra $\ket{k^{(n)}}\bra{k^{(0)}}$ viennent des différentes exponentielles complexes contenant $H_0$ qu'on réécrit de cette manière sachant que $H_0$ est diagonal. C'est d'ailleurs pour cela qu'on doit faire une $\sum_{\boldsymbol{k}_n}$. Quant à $(\delta t)^n$ et $f(\boldsymbol{\lambda}_n(\boldsymbol{k}_n)\delta t - \boldsymbol{c}(\boldsymbol{\omega}_n)\delta t)$, ils arrivent de la généralisation (qu'on ne détaillera pas, voir plutôt le paper) de (2.13). En fait, il existe une relation de récursion pour $f$ où pour un vecteur $\boldsymbol{a}$
+
+% \begin{equation}
+%     f(\boldsymbol{a}) = i\frac{f(\boldsymbol{g}(\boldsymbol{a})) - f(\boldsymbol{g}^2(\boldsymbol{a}) \cup \boldsymbol{a}[n])}{\boldsymbol{a}[n-1] - \boldsymbol{a}[n]}
+% \end{equation}
+
+% Ici, $\boldsymbol{g}(\boldsymbol{a})$ retourne $\boldsymbol{a}$ sans son élément tout à gauche, $\boldsymbol{g}^2(\boldsymbol{a}) = \boldsymbol{g}(\boldsymbol{g}(\boldsymbol{a}))$ et $\cup$ ajoute un élément à la gauche complètement du vecteur de sorte que $\boldsymbol{a} = \boldsymbol{g}(\boldsymbol{a}) \cup \boldsymbol{a}[n]$. 
 
 
 
